@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="GE_Application.main" target="1.8" />
+      <module name="GE_Application.test" target="1.8" />
+      <module name="GEApplication.main" target="1.8" />
+      <module name="GEApplication.test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,18 @@
+@#templates/includes/head.html@
+<body class="container">
+	@#templates/includes/navigation.html@
+
+	<h3>@title@</h3>
+
+	@: if (!menu.cheeses || !menu.cheeses.length) { @
+	<p>no cheese :(</p>
+	@: } else { @
+	<ul class="checkbox">
+		@: for (var cheese of menu.cheeses) { @
+		<li>@cheese.name@</li>
+		@: } @
+	</ul>
+	@: } @
+	<a href="/menu/edit/@menu.id@">Edit Menu</a>
+</body>
+@#templates/includes/tail.html@

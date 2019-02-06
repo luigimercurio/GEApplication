@@ -1,0 +1,27 @@
+@#templates/includes/head.html@
+<body class="container">
+	@#templates/includes/navigation.html@
+
+	<h3>Edit Menu</h3>
+
+	<form method="post">
+
+		<label for="name">Name</label>
+		<input class="form-control" name="name" id="name" value="@menu.name@"/>
+		@: if ($errors ["menu.name"]) { @
+		<span class="error">@$errors ["menu.name"]@</span>
+		@: } @
+		<div class="checkbox">
+			@: for (var cheese of cheeses) { @
+			<input type="checkbox" name="cheeseIds" value="@cheese.id@" id="@cheese.id@"
+			       @menu.cheeses.indexOf(cheese) &gt;= 0 ? &quot;checked&quot; : &quot;&quot;@/>
+			<label for="@cheese.id@">@cheese.name@</label>
+			<br/>
+			@: } @
+		</div>
+
+		<input type="submit" value="Save"/>
+	</form>
+
+</body>
+@#templates/includes/tail.html@

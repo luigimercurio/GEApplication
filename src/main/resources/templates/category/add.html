@@ -1,0 +1,16 @@
+@#templates/includes/head.html@
+<body class="container">
+@#templates/includes/navigation.html@
+<h3>@title@</h3>
+<form method="post" style="max-width:600px;">
+	<div class="form-group">
+		<label for="name">Name</label>
+		<input class="form-control" id="name" name="name" value="@category.name@"/>
+		@: if ($errors ["category.name"]) { @
+		<span class="error">@$errors ["category.name"]@</span>
+		@: } @
+	</div>
+	<input type="submit" value="Add"/>
+</form>
+</body>
+@#templates/includes/tail.html@

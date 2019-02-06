@@ -1,0 +1,36 @@
+@# templates/common.html @
+@: var cheeses = $model.cheeses; @
+@: head (); @
+<body class="container">
+@: navigation (); @
+<br/>
+@: if (! cheeses || cheeses.length == 0) { @
+<p>no cheese :(</p>
+@: } else { @
+<table class="table">
+	<tr>
+		<th>Name</th>
+		<th>Description</th>
+		<th>Category</th>
+		<th>&nbsp;</th>
+	</tr>
+	@: for (var cheese of cheeses) { @
+	<tr>
+		<td>@cheese.name@</td>
+		<td>@cheese.description@</td>
+		<td>
+			@: if (links) { @
+			<a href="/cheese/category/@cheese.category.id@">@|cheese.category.name@</a>
+			@: } else { @
+			<span>@cheese.category.name@</span>
+			@: } @
+		</td>
+		<td><a href="/cheese/edit/@cheese.id@">[edit]</a></td>
+	</tr>
+	@: } @
+</table>
+@: } @
+<a href="/cheese/add">Add cheese</a> |
+<a href="/cheese/remove">Remove cheeses</a>
+</body>
+@: tail (); @
