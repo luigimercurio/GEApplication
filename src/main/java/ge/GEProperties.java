@@ -2,6 +2,8 @@ package ge;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
+import javax.annotation.PostConstruct;
+
 @ConfigurationProperties (prefix = "ge.dataset")
 public class GEProperties {
 	protected String link = "";

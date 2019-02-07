@@ -3,14 +3,12 @@ package ge;
 import ge.models.Property;
 import ge.models.data.PropertyDao;
 import org.merkury.io.IOUtil;
+import org.merkury.util.NetUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.annotation.PostConstruct;
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -89,25 +87,48 @@ public class CSVParser {
 			counter++;
 			if (counter % 100_000 == 0) {
 				dao.save (properties);
-				GE.logger.info ("Loaded " + counter + " records");
+				GE.logger.info ("Updated " + counter + " records");
 				properties.clear ();
 			}
 		}
 		dao.save (properties);
-		GE.logger.info ("Finished loading " + counter + " records");
+		GE.logger.info ("Finished updating " + counter + " records");
 	}
 
 	@PostConstruct
-	public void parseFile () {
-		InputStream is = null;
-
+	public void parse () {
 		if (dao.count () != 0) {
 			return;
 		}
+		if (new File (properties.getFile ()).exists ()) {
+			parseFile ();
+			return;
+		}
+		reloadData ();
+	}
+
+	protected void reloadData () {
 		try {
+			GE.logger.info ("(Re)loading data set: " + properties.getLink ());
+			NetUtil.getCharFile (properties.getLink (), null, (String) null, properties.getFile (),
+			                     Charset.forName ("UTF-8"));
+			GE.logger.info ("Data set successfully (re)loaded");
+		}
+		catch (Throwable t) {
+			throw new Error (t);
+		}
+		parseFile ();
+	}
+
+	public void parseFile () {
+		InputStream is = null;
+
+		try {
+			GE.logger.info ("Parsing data set file: " + properties.getFile ());
 			//System.out.println (properties.getFile ());
 			is = new FileInputStream (properties.getFile ());
 			parse (is);
+			GE.logger.info ("Data set file successfully parsed");
 		}
 		catch (Throwable t) {
 			throw new Error (t);
