@@ -1,6 +1,5 @@
 package ge;
 
-import org.merkury.jst.JST;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 @ConfigurationProperties (prefix = "ge.dataset")

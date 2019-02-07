@@ -1,13 +1,14 @@
 package ge.models;
 
-import javax.persistence.*;
-import javax.validation.constraints.NotNull;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Index;
+import javax.persistence.Table;
 import javax.validation.constraints.Size;
-import java.util.List;
 
 @Entity
 @Table (name = "Properties",
-	indexes = { @Index (columnList = "x"), @Index (columnList = "y")})
+		indexes = { @Index (columnList = "x"), @Index (columnList = "y"), @Index (columnList = "parentFolio") })
 public class Property {
 
 	@Id
@@ -16,7 +17,10 @@ public class Property {
 	private double x;
 	private double y;
 
+	@Size (min = 13, max = 13)
 	private String folio;
+
+	@Size (min = 13, max = 13)
 	private String parentFolio;
 
 	public double getX () {
@@ -59,7 +63,9 @@ public class Property {
 	private List<Menu> menus;
 	*/
 
-	public Property(int id, double x, double y, String folio, String parentFolio) {
+	public Property () {}
+
+	public Property (int id, double x, double y, String folio, String parentFolio) {
 		this.id = id;
 		this.x = x;
 		this.y = y;
