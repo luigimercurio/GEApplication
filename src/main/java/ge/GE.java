@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @EnableConfigurationProperties (GEProperties.class)
 public class GE {
-	protected static final Log logger = LogFactory.getLog (GE.class);
+	public static final Log logger = LogFactory.getLog (GE.class);
 
 	@Bean
 	public CSVParser getParser () {
