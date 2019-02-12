@@ -32,7 +32,7 @@ public class CSVParser {
 	}
 
 	protected String[] parseLine (String line) {
-		String[] ss      = new String[5];
+		String[] ss      = new String[6];
 		int      p1      = 0;
 		int      p2;
 		int      index   = 0;
@@ -45,7 +45,7 @@ public class CSVParser {
 			else {
 				p2 = findNextComma (line, p1);
 			}
-			if ((index >= 0 && index <= 3) || index == 22) {
+			if ((index >= 0 && index <= 3) || index == 7 || index == 22) {
 				ss[ssIndex] = line.substring (p1, p2);
 				if (ss[ssIndex].length () == 0) {
 					ss[ssIndex] = null;
@@ -78,7 +78,7 @@ public class CSVParser {
 			ss = parseLine (s);
 			properties.add (
 					new Property (Integer.parseInt (ss[2]), Double.parseDouble (ss[0]), Double.parseDouble (ss[1]),
-					              ss[3], ss[4]));
+					              ss[3], ss[5], ss[4]));
 			/*
 			if (ss[4].length () > 0) {
 				org.merkury.io.JavaObjectWriter.dump (ss);

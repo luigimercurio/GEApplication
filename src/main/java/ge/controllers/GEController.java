@@ -17,28 +17,42 @@ import javax.validation.constraints.NotNull;
 @RequestMapping ("")
 public class GEController {
 	protected static class Coordinates {
-		public double west;
-		public double south;
-		public double east;
-		public double north;
-		public double lon;
-		public double lat;
-		public double range;
-		public double tilt;
-		public double heading;
+		public double west = 0;
+		public double south = 0;
+		public double east = 0;
+		public double north = 0;
+		public double lon = 0;
+		public double lat = 0;
+		public double range = 0;
+		public double tilt = 0;
+		public double heading = 0;
 
 		protected Coordinates (String bbox) {
 			String [] p = bbox.split (",");
+			int len = p.length;
 
-			west = Double.parseDouble (p[0]);
-			south = Double.parseDouble (p[1]);
-			east = Double.parseDouble (p[2]);
-			north = Double.parseDouble (p[3]);
-			lon = Double.parseDouble (p[4]);
-			lat = Double.parseDouble (p[5]);
-			range = Double.parseDouble (p[6]);
-			tilt = Double.parseDouble (p[7]);
-			heading = Double.parseDouble (p[8]);
+			switch (len) {
+				case 9:
+					heading = Double.parseDouble (p[8]);
+				case 8:
+					tilt = Double.parseDouble (p[7]);
+				case 7:
+					range = Double.parseDouble (p[6]);
+				case 6:
+					lat = Double.parseDouble (p[5]);
+				case 5:
+					lon = Double.parseDouble (p[4]);
+				case 4:
+					north = Double.parseDouble (p[3]);
+				case 3:
+					east = Double.parseDouble (p[2]);
+				case 2:
+					south = Double.parseDouble (p[1]);
+				case 1:
+					west = Double.parseDouble (p[0]);
+				default:
+					break;
+			}
 		}
 	}
 
@@ -52,21 +66,26 @@ public class GEController {
 	}
 
 	@GetMapping ("propx.kml")
-	public String index (Model model, HttpServletResponse response, @RequestParam ("BBOX") String bbox) {
+	public String index (Model model, HttpServletResponse response,
+	                     @RequestParam (required = false) String bbox) {
 		Coordinates coord;
+		Property [] properties;
 
-		GE.logger.info ("BBOX: " + bbox);
 		if (bbox == null) {
-			bbox = "-81,25,-80,26,-80.193573,25.773941,1000,0,0";
+			bbox = "-80.194573,25.772941,-80.192573,25.774941,-80.193573,25.773941,1000,0,0";
 		}
+		GE.logger.info ("bbox: " + bbox);
 		coord = new Coordinates (bbox);
+		properties = dao.locate (coord.west, coord.east, coord.south, coord.north);
+		GE.logger.info (properties.length + " properties");
 		response.setHeader ("Access-Control-Allow-Origin", "*");
-		model.addAttribute ("cheeses", cheeseDao.loadAll ());
-		model.addAttribute ("links", true);
+		model.addAttribute ("properties", properties);
+		model.addAttribute ("range", coord.range);
 
 		return "jst/propx";
 	}
 
+	/*
 	@GetMapping ("category/{id}")
 	public String categoryIndex (Model model, @PathVariable @NotNull int id) {
 		model.addAttribute ("cheeses", cheeseDao.findByCategory (id));
@@ -137,5 +156,6 @@ public class GEController {
 		cheeseDao.delete (cheeseIds);
 		return "redirect:/cheese";
 	}
+	*/
 
 }

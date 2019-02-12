@@ -23,6 +23,9 @@ public class Property {
 	@Size (min = 13, max = 13)
 	private String parentFolio;
 
+	@Size (max = 100)
+	private String address;
+
 	public double getX () {
 		return x;
 	}
@@ -55,6 +58,14 @@ public class Property {
 		this.parentFolio = parentFolio;
 	}
 
+	public String getAddress () {
+		return address;
+	}
+
+	public void setAddress (String address) {
+		this.address = address;
+	}
+
 	/*
 	@ManyToOne
 	private Category category;
@@ -65,12 +76,13 @@ public class Property {
 
 	public Property () {}
 
-	public Property (int id, double x, double y, String folio, String parentFolio) {
+	public Property (int id, double x, double y, String folio, String parentFolio, String address) {
 		this.id = id;
 		this.x = x;
 		this.y = y;
 		this.folio = folio;
 		this.parentFolio = parentFolio;
+		this.address = address;
 	}
 
 	/*
