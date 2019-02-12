@@ -1,10 +1,10 @@
 package ge;
 
 import org.merkury.io.IOUtil;
-import org.springframework.boot.ApplicationHome;
+import org.springframework.boot.system.ApplicationHome;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.web.support.SpringBootServletInitializer;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 import java.util.HashMap;
 import java.util.Map;

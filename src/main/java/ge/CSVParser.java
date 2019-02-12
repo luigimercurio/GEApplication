@@ -86,12 +86,12 @@ public class CSVParser {
 			*/
 			counter++;
 			if (counter % 100_000 == 0) {
-				dao.save (properties);
+				dao.saveAll (properties);
 				GE.logger.info ("Updated " + counter + " records");
 				properties.clear ();
 			}
 		}
-		dao.save (properties);
+		dao.saveAll (properties);
 		GE.logger.info ("Finished updating " + counter + " records");
 	}
 
