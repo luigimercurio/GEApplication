@@ -63,9 +63,10 @@ public class GEController {
 	@GetMapping ("prop.kml")
 	public String index (HttpServletResponse response, HttpServletRequest request) {
 		GE.logger.info ("Accept: " + request.getHeader (HttpHeaders.ACCEPT));
-		response.setHeader ("Access-Control-Allow-Origin", "*");
+		response.setHeader (HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN, "*");
 		return "jst/prop";
 	}
+
 
 	@GetMapping ("propx.kml")
 	public String index (Model model, HttpServletResponse response, HttpServletRequest request,
@@ -81,7 +82,7 @@ public class GEController {
 		coord = new Coordinates (bbox);
 		properties = dao.locate (coord.lon - 0.0025, coord.lon + 0.0025, coord.lat - 0.0025, coord.lat + 0.0025);
 		GE.logger.info (properties.length + " properties");
-		response.setHeader ("Access-Control-Allow-Origin", "*");
+		response.setHeader (HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN, "*");
 		model.addAttribute ("properties", properties);
 		model.addAttribute ("range", coord.range);
 
