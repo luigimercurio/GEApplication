@@ -54,7 +54,7 @@ public class GERelayer {
 		//System.out.println (req + '?' + qs);
 		/* THIS IS NOT CACHED! IT IS MODIFIED! PRESERVE! */
 		if (req.endsWith ("/styles.css")) {
-			return "/miamidadegis/styles/styles.css";
+			return "/css/styles.css";
 		}
 		if (req.endsWith (".ashx")) {
 			response.setHeader ("Content-Type", "application/json");

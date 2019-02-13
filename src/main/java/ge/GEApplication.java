@@ -5,6 +5,7 @@ import org.springframework.boot.system.ApplicationHome;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+import org.springframework.core.io.ClassPathResource;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,13 +14,18 @@ import java.util.Map;
 public class GEApplication extends SpringBootServletInitializer {
 	public static final String HOME = new ApplicationHome (GEApplication.class).getDir ().getAbsolutePath ();
 
+	static {
+		try { System.out.println (new ClassPathResource ("").getFile ().getCanonicalPath ()); }
+		catch (Throwable t) { throw new Error (t); }
+	}
+
 	protected static Map<String, Object> properties () {
 		String[]            dbInfo;
 		Map<String, Object> properties;
 
 		properties = new HashMap<> ();
 		try {
-			dbInfo = IOUtil.readFromFile (HOME + "/dbinfo").split ("\\|");
+			dbInfo = IOUtil.readFromFile (HOME + "/dbinfo").trim ().split ("\\|");
 		}
 		catch (Throwable t) {
 			throw new Error (t);

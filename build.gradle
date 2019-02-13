@@ -32,9 +32,12 @@ jar {
 }
 
 war {
-	baseName = 'ROOT'
-	rootSpec.exclude("**/logs/")
-	rootSpec.exclude("**/dbinfo")
+	enabled = true;
+    baseName = 'ROOT'
+    rootSpec.exclude("**/csv/")
+    rootSpec.exclude("**/logs/")
+    rootSpec.exclude("**/miamidadegis/")
+    rootSpec.exclude("**/dbinfo")
 }
 
 sourceCompatibility = 1.8
@@ -51,11 +54,10 @@ dependencies {
 	implementation('org.springframework.boot:spring-boot-starter-data-jpa')
 	implementation('mysql:mysql-connector-java')
 	implementation('org.graalvm.js:js:1.0.0-rc10')
-	compile files('../../../cls/jst/build/libs/merkury-jst-0.0.1-SNAPSHOT.jar')
-	compile files('../../../cls/merkury/out/artifacts/merkury.jar')
+	implementation files('../../../cls/jst/build/libs/merkury-jst-0.0.1-SNAPSHOT.jar')
+	implementation files('../../../cls/merkury/out/artifacts/merkury.jar')
 }
 
 bootRun {
-	//addResources = true
 	sourceResources sourceSets.main
 }

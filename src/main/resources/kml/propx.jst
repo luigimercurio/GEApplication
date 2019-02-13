@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+
+@: function outputDescription (attrs) { @
+  <description>
+    <![CDATA[
+      <html>
+        <head>
+          <meta name="viewport" content="width=500; height=500; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+          <title>@attrs.address@</title>
+        </head>
+        <body>
+          <div style="width: 300px; height: 500px; padding: 0px; margin: auto;">
+            <iframe style="width: 100%; height: 100%; border: none; padding: 0px; margin: 0px;" src="/propertysearch/#/?folio=@attrs.folio@"></iframe>
+          </div>
+        </body>
+      </html>
+    ]]>
+  </description>
+@: }
+
+function output (attrs) { @
+  <Placemark>
+    @: if (attrs.folio.endsWith ("0001")) { @
+      <Style><IconStyle><color>ffff0000</color></IconStyle></Style>
+      @: attrs.folio = attrs.folio.substring (0, 9); @
+    @: } @
+    <name>@attrs.address@</name>
+    <Snippet></Snippet>
+    <visibility>1</visibility>
+    @: outputDescription (attrs); @
+    <styleUrl>#regular</styleUrl>
+    <Point>
+      <extrude>1</extrude>
+      <altitudeMode>relativeToGround</altitudeMode>
+            <coordinates>@attrs.x@,@attrs.y@,@$model.range / 10@</coordinates>
+    </Point>
+  </Placemark>
+@: }
+
+function outputListings () {
+  for (property of $model.properties) {
+    output (property);
+  }
+}
+@
+
+<Document>
+
+<StyleMap id="regular">
+  <Pair>
+    <key>normal</key>
+    <styleUrl>#normal</styleUrl>
+  </Pair>
+  <Pair>
+    <key>highlight</key>
+    <styleUrl>#highlight</styleUrl>
+  </Pair>
+</StyleMap>
+
+<Style id="normal">
+  <IconStyle>
+    <color>ff00ff00</color>
+    <scale>0.5</scale>
+    <Icon>
+      <href>http://kh.google.com:80/flatfile?lf-0-icons/panoramio_cluster_n1.png</href>
+      <gx:w>32</gx:w>
+      <gx:h>32</gx:h>
+    </Icon>
+  </IconStyle>
+  <LabelStyle><scale>0</scale></LabelStyle>
+  <BalloonStyle><text>$[description]</text></BalloonStyle>
+  <LineStyle>
+    <color>ff000000</color>
+    <width>5</width>
+    <gx:labelVisibility>1</gx:labelVisibility>
+  </LineStyle>
+  <PolyStyle><color>ff000000</color></PolyStyle>
+</Style>
+
+<Style id="highlight">
+  <IconStyle>
+    <color>ff00ff00</color>
+    <scale>0.75</scale>
+    <Icon>
+      <href>http://kh.google.com:80/flatfile?lf-0-icons/panoramio_cluster_n1.png</href>
+      <gx:w>32</gx:w>
+      <gx:h>32</gx:h>
+    </Icon>
+  </IconStyle>
+  <BalloonStyle><text>$[description]</text></BalloonStyle>
+  <LineStyle>
+    <color>ff000000</color>
+    <width>5</width>
+    <gx:labelVisibility>1</gx:labelVisibility>
+  </LineStyle>
+  <PolyStyle><color>ff000000</color></PolyStyle>
+</Style>
+
+@: outputListings (); @
+
+</Document>
+</kml>
+

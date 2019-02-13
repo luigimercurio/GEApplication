@@ -64,7 +64,7 @@ public class GEController {
 	public String index (Model model, HttpServletRequest request, HttpServletResponse response) {
 		response.setHeader (HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN, "*");
 		model.addAttribute ("host name", request.getLocalName () + ':' + request.getLocalPort ());
-		return "jst/prop";
+		return "kml/prop";
 	}
 
 
@@ -85,6 +85,6 @@ public class GEController {
 		model.addAttribute ("properties", properties);
 		model.addAttribute ("range", coord.range);
 
-		return "jst/propx";
+		return "kml/propx";
 	}
 }
