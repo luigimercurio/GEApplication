@@ -61,20 +61,18 @@ public class GEController {
 	protected PropertyDao dao;
 
 	@GetMapping ("prop.kml")
-	public String index (HttpServletResponse response, HttpServletRequest request) {
-		GE.logger.info ("Accept: " + request.getHeader (HttpHeaders.ACCEPT));
+	public String index (HttpServletResponse response) {
 		response.setHeader (HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN, "*");
 		return "jst/prop";
 	}
 
 
 	@GetMapping ("propx.kml")
-	public String index (Model model, HttpServletResponse response, HttpServletRequest request,
+	public String index (Model model, HttpServletResponse response,
 	                     @RequestParam (required = false) String bbox) {
 		Coordinates coord;
 		Property [] properties;
 
-		GE.logger.info ("Accept: " + request.getHeader (HttpHeaders.ACCEPT));
 		if (bbox == null) {
 			bbox = "-80.194573,25.772941,-80.192573,25.774941,-80.193573,25.773941,1000,0,0";
 		}
