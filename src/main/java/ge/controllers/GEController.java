@@ -61,8 +61,9 @@ public class GEController {
 	protected PropertyDao dao;
 
 	@GetMapping ("prop.kml")
-	public String index (HttpServletResponse response) {
+	public String index (Model model, HttpServletRequest request, HttpServletResponse response) {
 		response.setHeader (HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN, "*");
+		model.addAttribute ("host name", request.getLocalName () + ':' + request.getLocalPort ());
 		return "jst/prop";
 	}
 
