@@ -44,7 +44,6 @@ public class GERelayer {
 	@GetMapping ("/propertysearch/**")
 	public String passive (HttpServletRequest request, HttpServletResponse response) {
 		String  req = request.getRequestURI ();
-		String  qs  = request.getQueryString ();
 		String  res;
 		File    dir;
 		File    file;
@@ -76,7 +75,7 @@ public class GERelayer {
 			if (!file.exists ()) {
 				filePath = file.getCanonicalPath ();
 				GE.logger.info ("Cache " + req + " -> " + filePath);
-				NetUtil.getBinaryFile ("https://www.miamidade.gov/" + req, null, new String[][] {
+				NetUtil.getBinaryFile ("https://www.miamidade.gov" + req, null, new String[][] {
 						{ "Referer", "https://www.miamidade.gov/propertysearch/" }, { "Connection", "close" }
 				}, filePath);
 				if (inject) {

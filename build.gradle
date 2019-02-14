@@ -54,6 +54,7 @@ dependencies {
 	implementation('org.springframework.boot:spring-boot-starter-data-jpa')
 	implementation('mysql:mysql-connector-java')
 	implementation('org.graalvm.js:js:1.0.0-rc10')
+	implementation('javax.interceptor:javax.interceptor-api:1.2')
 	implementation files('../../../cls/jst/build/libs/merkury-jst-0.0.1-SNAPSHOT.jar')
 	implementation files('../../../cls/merkury/out/artifacts/merkury.jar')
 }

@@ -1,7 +1,5 @@
 package ge;
 
-import org.merkury.json.JSONWriter;
-import org.merkury.jst.JST;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,8 +47,7 @@ public class DB {
 		logger.info ("Connection established");
 	}
 
-	public static Connection connection ()
-	throws SQLException {
+	public static Connection connection () {
 		return connection;
 	}
 }
