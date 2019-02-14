@@ -14,11 +14,6 @@ import java.util.Map;
 public class GEApplication extends SpringBootServletInitializer {
 	public static final String HOME = new ApplicationHome (GEApplication.class).getDir ().getAbsolutePath ();
 
-	static {
-		try { System.out.println (new ClassPathResource ("").getFile ().getCanonicalPath ()); }
-		catch (Throwable t) { throw new Error (t); }
-	}
-
 	protected static Map<String, Object> properties () {
 		String[]            dbInfo;
 		Map<String, Object> properties;

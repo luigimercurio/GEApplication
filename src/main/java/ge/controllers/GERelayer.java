@@ -3,7 +3,6 @@ package ge.controllers;
 import ge.GE;
 import org.merkury.io.IOUtil;
 import org.merkury.util.NetUtil;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.OutputStream;
+
+import static ge.GEApplication.HOME;
 
 @Controller
 @RequestMapping ("")
@@ -45,7 +46,6 @@ public class GERelayer {
 	public String passive (HttpServletRequest request, HttpServletResponse response) {
 		String  req = request.getRequestURI ();
 		String  res;
-		File    dir;
 		File    file;
 		boolean inject;
 		String  filePath;
@@ -69,8 +69,7 @@ public class GERelayer {
 				inject = false;
 			}
 			//System.out.println ("-> " + res);
-			dir = new ClassPathResource ("").getFile ();
-			file = new File (dir, "static" + res);
+			file = new File (HOME, "static" + res);
 			//System.out.println ("-> " + file);
 			if (!file.exists ()) {
 				filePath = file.getCanonicalPath ();
@@ -80,7 +79,7 @@ public class GERelayer {
 				}, filePath);
 				if (inject) {
 					IOUtil.writeToFile (filePath,
-					                    IOUtil.readFromFile (filePath).replace ("<head>", scriptInjection));
+					                    IOUtil.readFromFile (filePath).replaceFirst ("<head>", scriptInjection));
 				}
 			}
 			return res;

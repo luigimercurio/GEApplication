@@ -16,7 +16,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://E:/cls/jst/build/libs/merkury-jst-0.0.1-SNAPSHOT.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../../../cls/jst/build/libs/merkury-jst-0.0.1-SNAPSHOT.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -25,7 +25,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://E:/cls/merkury/out/artifacts/merkury.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../../../cls/merkury/out/artifacts/merkury.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

@@ -8,6 +8,7 @@ plugins {
 apply plugin: 'io.spring.dependency-management'
 
 jar {
+	enabled = true
 	baseName = 'ge'
 	version = '0.0.1-SNAPSHOT'
 }
@@ -41,5 +42,5 @@ dependencies {
 }
 
 bootRun {
-	sourceResources sourceSets.main
+	//sourceResources sourceSets.main
 }
