@@ -60,16 +60,20 @@ public class GEController {
 	@Autowired
 	protected PropertyDao dao;
 
+	@GetMapping ("")
+	public String index () {
+		return "index.html";
+	}
+
 	@GetMapping ("prop.kml")
-	public String index (Model model, HttpServletRequest request, HttpServletResponse response) {
+	public String prop (Model model, HttpServletRequest request, HttpServletResponse response) {
 		response.setHeader (HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN, "*");
 		model.addAttribute ("host name", request.getLocalName () + ':' + request.getLocalPort ());
 		return "kml/prop";
 	}
 
-
 	@GetMapping ("propx.kml")
-	public String index (Model model, HttpServletResponse response,
+	public String propx (Model model, HttpServletResponse response,
 	                     @RequestParam (required = false) String bbox) {
 		Coordinates coord;
 		Property [] properties;

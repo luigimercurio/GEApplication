@@ -1,4 +1,6 @@
-if (! Set) function Set() {
+"use strict";
+
+window.Set = typeof Set !== "undefined" ? Set : function Set() {
 	this._values = {};
 	this._size = 0;
 
@@ -9,7 +11,7 @@ if (! Set) function Set() {
 		}
 	},
 
-	this.remove = function (value) {
+	this.delete = function (value) {
 		if (this.contains(value)) {
 			delete this._values[this._hashFunction(value)];
 			this._size--;
