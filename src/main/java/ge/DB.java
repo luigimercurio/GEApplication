@@ -5,7 +5,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
 
 import javax.annotation.PostConstruct;
 import javax.persistence.EntityManager;
@@ -15,7 +14,6 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 @Component
-@Repository
 public class DB {
 	protected static final Logger     logger     = LoggerFactory.getLogger (DB.class);
 	protected static       Connection connection = null;
@@ -33,12 +31,6 @@ public class DB {
 			//JSONWriter.dump (entity);
 		}
 	}
-
-	/*
-	static {
-		new DB ();
-	}
-	*/
 
 	@PostConstruct
 	public void connect ()
