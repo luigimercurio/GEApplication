@@ -4,6 +4,31 @@ html, body{
 	font-size: 14px;
 }
 
+.loginBody {
+	text-align: center;
+}
+
+.error {
+	color: red;
+	font-weight: bold;
+}
+
+.inlineForm {
+	display: inline-block;
+}
+
+.loginTable {
+	width: 300px;
+}
+
+.rightAlignCell {
+	text-align: right;
+}
+
+#logo {
+	max-width: 300px;
+}
+
 a, a:visited{
 	color:#39599f;
 	cursor:pointer;
