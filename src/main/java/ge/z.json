@@ -1,0 +1,787 @@
+{
+  "Additionals": {
+    "AddtionalInfo": [
+      {
+        "Key": "LAND USE AND RESTRICTIONS",
+        "Value": [
+          {
+            "InfoName": "Community Development District",
+            "InfoValue": "COUNTYGIS",
+            "Message": ""
+          },
+          {
+            "InfoName": "Community Redevelopment Area",
+            "InfoValue": "COUNTYGIS",
+            "Message": ""
+          },
+          {
+            "InfoName": "Empowerment Zone",
+            "InfoValue": "COUNTYGIS",
+            "Message": ""
+          },
+          {
+            "InfoName": "Enterprise Zone",
+            "InfoValue": "COUNTYGIS",
+            "Message": ""
+          },
+          {
+            "InfoName": "Urban Development",
+            "InfoValue": "COUNTYGIS",
+            "Message": ""
+          },
+          {
+            "InfoName": "Zoning Code",
+            "InfoValue": "COUNTYGIS",
+            "Message": ""
+          },
+          {
+            "InfoName": "Existing Land Use",
+            "InfoValue": "COUNTYGIS",
+            "Message": ""
+          },
+          {
+            "InfoName": "Government Agencies and Community Services",
+            "InfoValue": "http:\/\/gisweb.miamidade.gov\/communityservices\/CommunityServicesAll.html?x=&y=&bufferDistance=5&address=139 NE 1 ST",
+            "Message": ""
+          }
+        ]
+      },
+      {
+        "Key": "OTHER GOVERNMENTAL JURISDICTIONS",
+        "Value": [
+          {
+            "InfoName": "Business Incentives",
+            "InfoValue": "https:\/\/gisweb.miamidade.gov\/businessincentive\/default.aspx?searchtype=address&amp;paramvalue=",
+            "Message": ""
+          },
+          {
+            "InfoName": "Childrens Trust",
+            "InfoValue": "https:\/\/www.thechildrenstrust.org\/",
+            "Message": ""
+          },
+          {
+            "InfoName": "City of Miami",
+            "InfoValue": "http:\/\/www.miamigov.com\/home\/",
+            "Message": ""
+          },
+          {
+            "InfoName": "Environmental Considerations",
+            "InfoValue": "https:\/\/gisweb.miamidade.gov\/environmentalconsiderations\/default.aspx?searchtype=address&paramvalue=139 NE 1 ST",
+            "Message": ""
+          },
+          {
+            "InfoName": "Florida Department Of Revenue",
+            "InfoValue": "http:\/\/dor.myflorida.com\/dor\/property\/",
+            "Message": ""
+          },
+          {
+            "InfoName": "Florida Inland Navigation District",
+            "InfoValue": "http:\/\/www.aicw.org\/index.jsp",
+            "Message": ""
+          },
+          {
+            "InfoName": "PA Bulletin Board",
+            "InfoValue": "http:\/\/bbs.miamidade.gov\/",
+            "Message": ""
+          },
+          {
+            "InfoName": "Non-Ad Valorem Assessments",
+            "InfoValue": "http:\/\/www.miamidade.gov\/PAPortal\/Taxes\/NonAdvalorem.aspx?folio=0101100401100",
+            "Message": ""
+          },
+          {
+            "InfoName": "School Board",
+            "InfoValue": "http:\/\/www.dadeschools.net\/",
+            "Message": ""
+          },
+          {
+            "InfoName": "South Florida Water Mgmt District",
+            "InfoValue": "http:\/\/www.sfwmd.gov\/portal\/page\/portal\/sfwmdmain\/home%20page",
+            "Message": ""
+          },
+          {
+            "InfoName": "Tax Collector",
+            "InfoValue": "http:\/\/www.miamidade.gov\/taxcollector\/",
+            "Message": ""
+          }
+        ]
+      }
+    ],
+    "FooterMessage": "",
+    "HeaderMessage": "* The information listed below is not derived from the Property Appraiser's Office records.  It is provided for convenience and is derived from other government agencies."
+  },
+  "Assessment": {
+    "AssessmentInfos": [
+      {
+        "AssessedValue": 3402769,
+        "BuildingOnlyValue": 24676,
+        "ExtraFeatureValue": 3093,
+        "LandValue": 3375000,
+        "Message": null,
+        "TotalValue": 3402769,
+        "Year": 2018
+      },
+      {
+        "AssessedValue": 6352500,
+        "BuildingOnlyValue": 4250000,
+        "ExtraFeatureValue": 0,
+        "LandValue": 2250000,
+        "Message": null,
+        "TotalValue": 6500000,
+        "Year": 2017
+      },
+      {
+        "AssessedValue": 5775000,
+        "BuildingOnlyValue": 3525000,
+        "ExtraFeatureValue": 0,
+        "LandValue": 2250000,
+        "Message": null,
+        "TotalValue": 5775000,
+        "Year": 2016
+      }
+    ],
+    "Messages": [
+      {
+        "Message": "",
+        "Year": 2018
+      },
+      {
+        "Message": "",
+        "Year": 2017
+      },
+      {
+        "Message": "",
+        "Year": 2016
+      }
+    ]
+  },
+  "Benefit": {
+    "BenefitInfos": [
+      {
+        "Description": "Non-Homestead Cap",
+        "Message": null,
+        "Seq": "5",
+        "TaxYear": 2017,
+        "Type": "Assessment Reduction",
+        "Url": "http:\/\/www.miamidade.gov\/pa\/property_value_cap.asp",
+        "Value": 147500
+      }
+    ],
+    "Messages": []
+  },
+  "Building": {
+    "BuildingInfos": [
+      {
+        "Actual": 1927,
+        "ActualArea": 7920,
+        "AdjustedBasePrice": 0.7,
+        "BuildingNo": 1,
+        "DepreciatedValue": 5571,
+        "Effective": 1935,
+        "EffectiveArea": 7920,
+        "GrossArea": -1,
+        "HeatedArea": -1,
+        "Message": null,
+        "PercentComp": 1,
+        "PercentageGood": 0.54999999999999494,
+        "ReplacementCostNew": 1012889,
+        "RollYear": 2018,
+        "SegNo": 1,
+        "TotalAdjustedPoints": 203,
+        "TraversePoints": "N",
+        "improvementModelDesc": "Office - High Rise"
+      },
+      {
+        "Actual": 1927,
+        "ActualArea": 7920,
+        "AdjustedBasePrice": -1,
+        "BuildingNo": 1,
+        "DepreciatedValue": -1,
+        "Effective": 1935,
+        "EffectiveArea": 7920,
+        "GrossArea": -1,
+        "HeatedArea": -1,
+        "Message": null,
+        "PercentComp": 1,
+        "PercentageGood": -1,
+        "ReplacementCostNew": -1,
+        "RollYear": 2017,
+        "SegNo": 1,
+        "TotalAdjustedPoints": 203,
+        "TraversePoints": "N",
+        "improvementModelDesc": "Office - High Rise"
+      },
+      {
+        "Actual": 1927,
+        "ActualArea": 7920,
+        "AdjustedBasePrice": -1,
+        "BuildingNo": 1,
+        "DepreciatedValue": -1,
+        "Effective": 1935,
+        "EffectiveArea": 7920,
+        "GrossArea": -1,
+        "HeatedArea": -1,
+        "Message": null,
+        "PercentComp": 1,
+        "PercentageGood": -1,
+        "ReplacementCostNew": -1,
+        "RollYear": 2016,
+        "SegNo": 1,
+        "TotalAdjustedPoints": 203,
+        "TraversePoints": "N",
+        "improvementModelDesc": "Office - High Rise"
+      },
+      {
+        "Actual": 1927,
+        "ActualArea": 35345,
+        "AdjustedBasePrice": 0.54,
+        "BuildingNo": 1,
+        "DepreciatedValue": 19105,
+        "Effective": 1935,
+        "EffectiveArea": 35345,
+        "GrossArea": -1,
+        "HeatedArea": -1,
+        "Message": null,
+        "PercentComp": 1,
+        "PercentageGood": 0.54999999999999494,
+        "ReplacementCostNew": 3473707,
+        "RollYear": 2018,
+        "SegNo": 2,
+        "TotalAdjustedPoints": 156,
+        "TraversePoints": "N",
+        "improvementModelDesc": "Office - High Rise"
+      },
+      {
+        "Actual": 1927,
+        "ActualArea": 35345,
+        "AdjustedBasePrice": -1,
+        "BuildingNo": 1,
+        "DepreciatedValue": -1,
+        "Effective": 1935,
+        "EffectiveArea": 35345,
+        "GrossArea": -1,
+        "HeatedArea": -1,
+        "Message": null,
+        "PercentComp": 1,
+        "PercentageGood": -1,
+        "ReplacementCostNew": -1,
+        "RollYear": 2017,
+        "SegNo": 2,
+        "TotalAdjustedPoints": 156,
+        "TraversePoints": "N",
+        "improvementModelDesc": "Office - High Rise"
+      },
+      {
+        "Actual": 1927,
+        "ActualArea": 35345,
+        "AdjustedBasePrice": -1,
+        "BuildingNo": 1,
+        "DepreciatedValue": -1,
+        "Effective": 1935,
+        "EffectiveArea": 35345,
+        "GrossArea": -1,
+        "HeatedArea": -1,
+        "Message": null,
+        "PercentComp": 1,
+        "PercentageGood": -1,
+        "ReplacementCostNew": -1,
+        "RollYear": 2016,
+        "SegNo": 2,
+        "TotalAdjustedPoints": 156,
+        "TraversePoints": "N",
+        "improvementModelDesc": "Office - High Rise"
+      }
+    ],
+    "Messages": [
+      {
+        "Message": "",
+        "Year": 2018
+      },
+      {
+        "Message": "The calculated values for this property have been overridden.  Please refer to the Land, Building, and XF Values in the Assessment Section, in order to obtain the most accurate values.",
+        "Year": 2017
+      },
+      {
+        "Message": "The calculated values for this property have been overridden.  Please refer to the Land, Building, and XF Values in the Assessment Section, in order to obtain the most accurate values.",
+        "Year": 2016
+      }
+    ]
+  },
+  "ClassifiedAgInfo": {
+    "Acreage": 0,
+    "CalculatedValue": 0,
+    "LandCode": null,
+    "LandUse": null,
+    "Message": null,
+    "UnitPrice": 0
+  },
+  "Completed": true,
+  "District": 6,
+  "ExtraFeature": {
+    "ExtraFeatureInfos": [
+      {
+        "ActualYearBuilt": 1927,
+        "AdjustedUnitPrice": 13.75,
+        "DepreciatedValue": 1444,
+        "Description": "Chill Water A\/C (Aprox 300 sqft\/Ton)",
+        "Message": null,
+        "PercentCondition": 0.54999999999999993,
+        "RollYear": 2018,
+        "Units": 105,
+        "UseCode": "0003"
+      },
+      {
+        "ActualYearBuilt": 1927,
+        "AdjustedUnitPrice": 4.14,
+        "DepreciatedValue": 153,
+        "Description": "Plumbing Fixtures - Hi-Rise",
+        "Message": null,
+        "PercentCondition": 0.54999999999999993,
+        "RollYear": 2018,
+        "Units": 37,
+        "UseCode": "0099"
+      },
+      {
+        "ActualYearBuilt": 1927,
+        "AdjustedUnitPrice": -1,
+        "DepreciatedValue": -1,
+        "Description": "Plumbing Fixtures - Hi-Rise",
+        "Message": null,
+        "PercentCondition": -1,
+        "RollYear": 2017,
+        "Units": 37,
+        "UseCode": "0099"
+      },
+      {
+        "ActualYearBuilt": 1927,
+        "AdjustedUnitPrice": -1,
+        "DepreciatedValue": -1,
+        "Description": "Chill Water A\/C (Aprox 300 sqft\/Ton)",
+        "Message": null,
+        "PercentCondition": -1,
+        "RollYear": 2017,
+        "Units": 105,
+        "UseCode": "0003"
+      },
+      {
+        "ActualYearBuilt": 1927,
+        "AdjustedUnitPrice": -1,
+        "DepreciatedValue": -1,
+        "Description": "Chill Water A\/C (Aprox 300 sqft\/Ton)",
+        "Message": null,
+        "PercentCondition": -1,
+        "RollYear": 2016,
+        "Units": 105,
+        "UseCode": "0003"
+      },
+      {
+        "ActualYearBuilt": 1927,
+        "AdjustedUnitPrice": -1,
+        "DepreciatedValue": -1,
+        "Description": "Plumbing Fixtures - Hi-Rise",
+        "Message": null,
+        "PercentCondition": -1,
+        "RollYear": 2016,
+        "Units": 37,
+        "UseCode": "0099"
+      },
+      {
+        "ActualYearBuilt": 1978,
+        "AdjustedUnitPrice": 9.4,
+        "DepreciatedValue": 47,
+        "Description": "Cent A\/C - Comm (Aprox 300 sqft\/Ton)",
+        "Message": null,
+        "PercentCondition": 0.63,
+        "RollYear": 2018,
+        "Units": 5,
+        "UseCode": "0004"
+      },
+      {
+        "ActualYearBuilt": 1978,
+        "AdjustedUnitPrice": -1,
+        "DepreciatedValue": -1,
+        "Description": "Cent A\/C - Comm (Aprox 300 sqft\/Ton)",
+        "Message": null,
+        "PercentCondition": -1,
+        "RollYear": 2017,
+        "Units": 5,
+        "UseCode": "0004"
+      },
+      {
+        "ActualYearBuilt": 1978,
+        "AdjustedUnitPrice": -1,
+        "DepreciatedValue": -1,
+        "Description": "Cent A\/C - Comm (Aprox 300 sqft\/Ton)",
+        "Message": null,
+        "PercentCondition": -1,
+        "RollYear": 2016,
+        "Units": 5,
+        "UseCode": "0004"
+      },
+      {
+        "ActualYearBuilt": 1984,
+        "AdjustedUnitPrice": 96.6,
+        "DepreciatedValue": 1449,
+        "Description": "Elevator - Passenger, Automatic - 2500 lb  Hi-rise",
+        "Message": null,
+        "PercentCondition": 0.69,
+        "RollYear": 2018,
+        "Units": 15,
+        "UseCode": "0028"
+      },
+      {
+        "ActualYearBuilt": 1984,
+        "AdjustedUnitPrice": -1,
+        "DepreciatedValue": -1,
+        "Description": "Elevator - Passenger, Automatic - 2500 lb  Hi-rise",
+        "Message": null,
+        "PercentCondition": -1,
+        "RollYear": 2017,
+        "Units": 15,
+        "UseCode": "0028"
+      },
+      {
+        "ActualYearBuilt": 1984,
+        "AdjustedUnitPrice": -1,
+        "DepreciatedValue": -1,
+        "Description": "Elevator - Passenger, Automatic - 2500 lb  Hi-rise",
+        "Message": null,
+        "PercentCondition": -1,
+        "RollYear": 2016,
+        "Units": 15,
+        "UseCode": "0028"
+      }
+    ],
+    "Messages": [
+      {
+        "Message": "",
+        "Year": 2018
+      },
+      {
+        "Message": "The calculated values for this property have been overridden.  Please refer to the Land, Building, and XF Values in the Assessment Section, in order to obtain the most accurate values.",
+        "Year": 2017
+      },
+      {
+        "Message": "The calculated values for this property have been overridden.  Please refer to the Land, Building, and XF Values in the Assessment Section, in order to obtain the most accurate values.",
+        "Year": 2016
+      }
+    ]
+  },
+  "GeoParcel": null,
+  "Land": {
+    "Landlines": [
+      {
+        "AdjustedUnitPrice": 450,
+        "CalculatedValue": 3375000,
+        "Depth": 0,
+        "FrontFeet": 0,
+        "LandUse": "GENERAL",
+        "LandlineType": "C",
+        "Message": null,
+        "MuniZone": "T6-80 O",
+        "MuniZoneDescription": null,
+        "PAZoneDescription": "COMMERCIAL",
+        "PercentCondition": 1,
+        "RollYear": 2018,
+        "TotalAdjustments": 1,
+        "UnitType": "Square Ft.",
+        "Units": 7500,
+        "UseCode": "00",
+        "Zone": "6401"
+      },
+      {
+        "AdjustedUnitPrice": -1,
+        "CalculatedValue": -1,
+        "Depth": 0,
+        "FrontFeet": 0,
+        "LandUse": "GENERAL",
+        "LandlineType": "C",
+        "Message": null,
+        "MuniZone": "T6-80 O",
+        "MuniZoneDescription": null,
+        "PAZoneDescription": "COMMERCIAL",
+        "PercentCondition": 1,
+        "RollYear": 2017,
+        "TotalAdjustments": 1,
+        "UnitType": "Square Ft.",
+        "Units": 7500,
+        "UseCode": "00",
+        "Zone": "6401"
+      },
+      {
+        "AdjustedUnitPrice": -1,
+        "CalculatedValue": -1,
+        "Depth": 0,
+        "FrontFeet": 0,
+        "LandUse": "GENERAL",
+        "LandlineType": "C",
+        "Message": null,
+        "MuniZone": "T6-80 O",
+        "MuniZoneDescription": null,
+        "PAZoneDescription": "COMMERCIAL",
+        "PercentCondition": 1,
+        "RollYear": 2016,
+        "TotalAdjustments": 1,
+        "UnitType": "Square Ft.",
+        "Units": 7500,
+        "UseCode": "00",
+        "Zone": "6401"
+      }
+    ],
+    "Messages": [
+      {
+        "Message": "",
+        "Year": 2018
+      },
+      {
+        "Message": "The calculated values for this property have been overridden.  Please refer to the Land, Building, and XF Values in the Assessment Section, in order to obtain the most accurate values.",
+        "Year": 2017
+      },
+      {
+        "Message": "The calculated values for this property have been overridden.  Please refer to the Land, Building, and XF Values in the Assessment Section, in order to obtain the most accurate values.",
+        "Year": 2016
+      }
+    ]
+  },
+  "LegalDescription": {
+    "Description": "MIAMI NORTH PB B-41|E1\/2 OF LOT 15 & W1\/2 OF LOT 16|BLK 104|LOT SIZE 50.000 X 150|OR 21131-3691 0303 1",
+    "Message": null,
+    "Number": null
+  },
+  "MailingAddress": {
+    "Address1": "18851 NE 29 AVE 1000",
+    "Address2": "",
+    "Address3": "",
+    "City": "MIAMI",
+    "Country": "USA",
+    "Message": null,
+    "State": "FL",
+    "ZipCode": "33180"
+  },
+  "Message": "",
+  "OwnerInfos": [
+    {
+      "Description": "",
+      "MarriedFlag": "\u0000",
+      "Message": null,
+      "Name": "DREAM DOWNTOWN MIAMI LLC",
+      "PercentageOwn": 0,
+      "Role": null,
+      "ShortDescription": "",
+      "TenancyCd": "\u0000"
+    }
+  ],
+  "PropertyInfo": {
+    "BathroomCount": 0,
+    "BedroomCount": 0,
+    "BuildingActualArea": 43265,
+    "BuildingBaseArea": 43265,
+    "BuildingEffectiveArea": 43265,
+    "BuildingGrossArea": -1,
+    "BuildingHeatedArea": -1,
+    "DORCode": "1813",
+    "DORDescription": "OFFICE BUILDING - MULTISTORY : OFFICE BUILDING",
+    "DORDescriptionCurrent": null,
+    "EncodedFolioAndTaxYear": "J1COeydnmm9IKYVD%2bg8lqHG7%2fiKu5sW3gDZMoZnHl%2bs%3d",
+    "FloorCount": 7,
+    "FolioNumber": "01-0110-040-1100",
+    "HalfBathroomCount": 0,
+    "HxBaseYear": 0,
+    "LotSize": 7500,
+    "Message": null,
+    "Municipality": "Miami",
+    "Neighborhood": 69010,
+    "NeighborhoodDescription": "Miami CBD",
+    "ParentFolio": "",
+    "PercentHomesteadCapped": 0,
+    "PlatBook": "B",
+    "PlatPage": "41",
+    "PrimaryZone": "6401",
+    "PrimaryZoneDescription": "COMMERCIAL",
+    "ShowCurrentValuesFlag": "N",
+    "Status": "AC Active",
+    "Subdivision": "010110040",
+    "SubdivisionDescription": "CITY OF MIAMI NORTH BLK 104 PB B-41",
+    "UnitCount": 0,
+    "YearBuilt": 1927
+  },
+  "RollYear1": 2018,
+  "SalesInfos": [
+    {
+      "DateOfSale": "11\/16\/2015",
+      "DocumentStamps": 43056,
+      "EncodedRecordBookAndPage": "lHVlhHQhIZoJRUYKiXnhi2u1JoTHn2aZrmVBL4fBAIDXIF5AHe9feA%3d%3d",
+      "GranteeName1": "DREAM DOWNTOWN MIAMI LLC",
+      "GranteeName2": "",
+      "GrantorName1": "TITAN DEVELOPMENT PARTNERS LLC",
+      "GrantorName2": "",
+      "Message": null,
+      "OfficialRecordBook": "29862",
+      "OfficialRecordPage": "4693",
+      "QualificationDescription": "Partial interest",
+      "QualifiedFlag": "U",
+      "QualifiedSYear": null,
+      "QualifiedSourceCode": "",
+      "ReasonCode": "16",
+      "ReviewCode": null,
+      "SaleId": 5,
+      "SaleInstrument": "DEE",
+      "SalePrice": 7176000,
+      "VacantFlag": "\u0000",
+      "ValidCode": null,
+      "VerifyCode": null
+    },
+    {
+      "DateOfSale": "11\/16\/2015",
+      "DocumentStamps": 12144,
+      "EncodedRecordBookAndPage": "lHVlhHQhIZoJRUYKiXnhi2u1JoTHn2aZrmVBL4fBAIAbRfU6lF2Tzw%3d%3d",
+      "GranteeName1": "DREAM DOWNTOWN MIAMI LLC",
+      "GranteeName2": "",
+      "GrantorName1": "TITAN DEVELOPMENT PARTNERS LLC",
+      "GrantorName2": "",
+      "Message": null,
+      "OfficialRecordBook": "29862",
+      "OfficialRecordPage": "4695",
+      "QualificationDescription": "Partial interest",
+      "QualifiedFlag": "U",
+      "QualifiedSYear": null,
+      "QualifiedSourceCode": "",
+      "ReasonCode": "16",
+      "ReviewCode": null,
+      "SaleId": 4,
+      "SaleInstrument": "DEE",
+      "SalePrice": 2024000,
+      "VacantFlag": "\u0000",
+      "ValidCode": null,
+      "VerifyCode": null
+    },
+    {
+      "DateOfSale": "11\/1\/1973",
+      "DocumentStamps": 0,
+      "EncodedRecordBookAndPage": "lHVlhHQhIZoJRUYKiXnhi5K4tIoWMEvtv6VVIagHT4VuiXI3%2bEEWcQ%3d%3d",
+      "GranteeName1": "",
+      "GranteeName2": "",
+      "GrantorName1": "",
+      "GrantorName2": "",
+      "Message": null,
+      "OfficialRecordBook": "00000",
+      "OfficialRecordPage": "00000",
+      "QualificationDescription": "Sales which are qualified",
+      "QualifiedFlag": "Q",
+      "QualifiedSYear": null,
+      "QualifiedSourceCode": "",
+      "ReasonCode": "00",
+      "ReviewCode": null,
+      "SaleId": 3,
+      "SaleInstrument": "",
+      "SalePrice": 410000,
+      "VacantFlag": "\u0000",
+      "ValidCode": null,
+      "VerifyCode": null
+    },
+    {
+      "DateOfSale": "8\/1\/1977",
+      "DocumentStamps": 0,
+      "EncodedRecordBookAndPage": "lHVlhHQhIZoJRUYKiXnhixdEMTS4fhUMiaRR2dO8X2hchp2lKlD5zQ%3d%3d",
+      "GranteeName1": "",
+      "GranteeName2": "",
+      "GrantorName1": "",
+      "GrantorName2": "",
+      "Message": null,
+      "OfficialRecordBook": "09775",
+      "OfficialRecordPage": "0767",
+      "QualificationDescription": "Sales which are qualified",
+      "QualifiedFlag": "Q",
+      "QualifiedSYear": null,
+      "QualifiedSourceCode": "",
+      "ReasonCode": "00",
+      "ReviewCode": null,
+      "SaleId": 2,
+      "SaleInstrument": "",
+      "SalePrice": 298400,
+      "VacantFlag": "\u0000",
+      "ValidCode": null,
+      "VerifyCode": null
+    },
+    {
+      "DateOfSale": "3\/1\/2003",
+      "DocumentStamps": 0,
+      "EncodedRecordBookAndPage": "lHVlhHQhIZoJRUYKiXnhi4wx7DrjBLUFLpiNfvNLKy4A1xeqEmkCRA%3d%3d",
+      "GranteeName1": "",
+      "GranteeName2": "",
+      "GrantorName1": "",
+      "GrantorName2": "",
+      "Message": null,
+      "OfficialRecordBook": "21131",
+      "OfficialRecordPage": "3691",
+      "QualificationDescription": "Sales which are qualified",
+      "QualifiedFlag": "Q",
+      "QualifiedSYear": null,
+      "QualifiedSourceCode": "",
+      "ReasonCode": "00",
+      "ReviewCode": null,
+      "SaleId": 1,
+      "SaleInstrument": "",
+      "SalePrice": 1300000,
+      "VacantFlag": "\u0000",
+      "ValidCode": null,
+      "VerifyCode": null
+    }
+  ],
+  "SiteAddress": [
+    {
+      "Address": "139 NE 1 ST, Miami, FL 33132-2527",
+      "BuildingNumber": 1,
+      "City": "Miami",
+      "Message": null,
+      "StreetName": "1",
+      "StreetNumber": 139,
+      "StreetPrefix": "NE",
+      "StreetSuffix": "ST",
+      "StreetSuffixDirection": "",
+      "Unit": "",
+      "Zip": "33132-2527"
+    }
+  ],
+  "Taxable": {
+    "Messages": [],
+    "TaxableInfos": [
+      {
+        "CityExemptionValue": 0,
+        "CityTaxableValue": 3402769,
+        "CountyExemptionValue": 0,
+        "CountyTaxableValue": 3402769,
+        "Message": null,
+        "RegionalExemptionValue": 0,
+        "RegionalTaxableValue": 3402769,
+        "SchoolExemptionValue": 0,
+        "SchoolTaxableValue": 3402769,
+        "Year": 2018
+      },
+      {
+        "CityExemptionValue": 0,
+        "CityTaxableValue": 6352500,
+        "CountyExemptionValue": 0,
+        "CountyTaxableValue": 6352500,
+        "Message": null,
+        "RegionalExemptionValue": 0,
+        "RegionalTaxableValue": 6352500,
+        "SchoolExemptionValue": 0,
+        "SchoolTaxableValue": 6500000,
+        "Year": 2017
+      },
+      {
+        "CityExemptionValue": 0,
+        "CityTaxableValue": 5775000,
+        "CountyExemptionValue": 0,
+        "CountyTaxableValue": 5775000,
+        "Message": null,
+        "RegionalExemptionValue": 0,
+        "RegionalTaxableValue": 5775000,
+        "SchoolExemptionValue": 0,
+        "SchoolTaxableValue": 5775000,
+        "Year": 2016
+      }
+    ]
+  }
+}

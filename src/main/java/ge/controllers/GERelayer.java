@@ -14,6 +14,8 @@ import java.io.OutputStream;
 
 import static ge.GEApplication.HOME;
 
+//http://localhost:8080/propertysearch/scripts/services/paConfiguration.js
+
 @Controller
 @RequestMapping ("")
 public class GERelayer {
@@ -49,7 +51,7 @@ public class GERelayer {
 		File    file;
 		String  filePath;
 
-		//System.out.println (req + '?' + qs);
+		//GE.logger.info (req);
 		/* THIS IS NOT CACHED! IT IS MODIFIED! PRESERVE! */
 		if (req.endsWith ("/styles.css")) {
 			return "/css/styles.css";
