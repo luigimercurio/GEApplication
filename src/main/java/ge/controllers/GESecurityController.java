@@ -3,7 +3,6 @@ package ge.controllers;
 import ge.GESecurity;
 import ge.models.RegisteredUser;
 import ge.models.data.RegisteredUserDao;
-import org.merkury.jst.JSTProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -25,9 +24,6 @@ import javax.validation.Valid;
 public class GESecurityController {
 
 	@Autowired
-	protected JSTProperties env;
-
-	@Autowired
 	protected GESecurity config;
 
 	@Autowired
@@ -41,13 +37,19 @@ public class GESecurityController {
 	}
 
 	@PostMapping ("register")
-	public String register (@ModelAttribute ("user") @Valid RegisteredUser user,
-	                        Errors errors, Model model, CsrfToken _csrf) {
+	public String register (@ModelAttribute ("user") @Valid RegisteredUser user, Errors errors,
+							@RequestParam String verify, Model model, CsrfToken _csrf) {
 		JdbcUserDetailsManager userManager     = config.userManager ();
 		PasswordEncoder        passwordEncoder = config.passwordEncoder ();
 
 		if (userDao.existsById (user.getUsername ())) {
 			model.addAttribute ("userExists", true);
+			user.setPassword ("");
+			model.addAttribute ("_csrf", _csrf);
+			return "html/register";
+		}
+		if (!verify.equals (user.getPassword ())) {
+			model.addAttribute ("unmatched", true);
 			user.setPassword ("");
 			model.addAttribute ("_csrf", _csrf);
 			return "html/register";

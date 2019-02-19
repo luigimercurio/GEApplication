@@ -66,14 +66,6 @@ public class Property {
 		this.address = address;
 	}
 
-	/*
-	@ManyToOne
-	private Category category;
-
-	@ManyToMany (mappedBy="cheeses")
-	private List<Menu> menus;
-	*/
-
 	public Property () {}
 
 	public Property (int id, double x, double y, String folio, String parentFolio, String address) {
