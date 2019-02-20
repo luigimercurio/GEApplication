@@ -14,6 +14,8 @@ import java.io.OutputStream;
 
 import static ge.GEApplication.HOME;
 
+//http://localhost:8080/propertysearch/scripts/services/paConfiguration.js
+
 @Controller
 @RequestMapping ("")
 public class GERelayer {
@@ -47,10 +49,9 @@ public class GERelayer {
 		String  req = request.getRequestURI ();
 		String  res;
 		File    file;
-		boolean inject;
 		String  filePath;
 
-		//System.out.println (req + '?' + qs);
+		//GE.logger.info (req);
 		/* THIS IS NOT CACHED! IT IS MODIFIED! PRESERVE! */
 		if (req.endsWith ("/styles.css")) {
 			return "/css/styles.css";
@@ -62,11 +63,9 @@ public class GERelayer {
 			res = req.substring ("/propertysearch".length ());
 			if (res.length () <= 1) {
 				res = "/miamidadegis/index.html";
-				inject = true;
 			}
 			else {
 				res = "/miamidadegis" + res;
-				inject = false;
 			}
 			//System.out.println ("-> " + res);
 			file = new File (HOME, "static" + res);
@@ -77,7 +76,7 @@ public class GERelayer {
 				NetUtil.getBinaryFile ("https://www.miamidade.gov" + req, null, new String[][] {
 						{ "Referer", "https://www.miamidade.gov/propertysearch/" }, { "Connection", "close" }
 				}, filePath);
-				if (inject) {
+				if ("/miamidadegis/index.html".equals (res)) {
 					IOUtil.writeToFile (filePath,
 					                    IOUtil.readFromFile (filePath).replaceFirst ("<head>", scriptInjection));
 				}

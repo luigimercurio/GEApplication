@@ -1,16 +1,16 @@
-@= error, logout, _csrf @
+@: error, logout, _csrf @
 @# html/common.jst @
-@: head (); @
+@ head (); @
 <body class="loginBody">
-    @: logo (); @
+    @ logo (); @
 	<br/>
-    @: if (error != null) { @
-        <p><span class="error">Invalid username and/or password.</span></p>
-	@: } else if (logout != null) { @
-		<p><b>You have been logged out.</b></p>
-	@: } else { @
-		<p><b>Please sign in</b></p>
-    @: } @
+    @ if (error != null) { @
+    <p><span class="error">Invalid username and/or password.</span></p>
+	@ } else if (logout != null) { @
+	<p><b>You have been logged out.</b></p>
+	@ } else { @
+	<p><b>Please sign in</b></p>
+    @ } @
 	<form class="inlineForm" action="/login" method="post">
         <table class="loginTable">
             <tr>
@@ -22,9 +22,9 @@
                 <td><input type="password" name="password"/></td>
             </tr>
         </table>
+        <input type="hidden" name=@=_csrf.parameterName@ value="@=_csrf.token@"/>
         <p><button type="submit"><b>Sign in</b></button></p>
-        <p>Not registered? Register <a href="/register">here</a></p>
-        <input type="hidden" name="@_csrf.parameterName@" value="@_csrf.token@"/>
     </form>
+    <p>Not registered? Register <a href="/register">here</a></p>
 </body>
-@: tail (); @
+@ tail (); @

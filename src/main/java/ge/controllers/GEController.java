@@ -5,6 +5,7 @@ import ge.models.Property;
 import ge.models.data.PropertyDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
+import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -68,8 +69,14 @@ public class GEController {
 	@GetMapping ("prop.kml")
 	public String prop (Model model, HttpServletRequest request, HttpServletResponse response) {
 		response.setHeader (HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN, "*");
-		model.addAttribute ("host name", request.getLocalName () + ':' + request.getLocalPort ());
+		model.addAttribute ("host", "http://" + request.getServerName () + ':' + request.getServerPort ());
 		return "kml/prop";
+	}
+
+	@GetMapping ("prop2.kml")
+	public String prop2 (Model model, HttpServletRequest request, HttpServletResponse response) {
+		response.setHeader (HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN, "*");
+		return "kml/prop2";
 	}
 
 	@GetMapping ("propx.kml")
