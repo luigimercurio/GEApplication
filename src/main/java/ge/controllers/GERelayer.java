@@ -14,7 +14,8 @@ import java.io.OutputStream;
 
 import static ge.GEApplication.HOME;
 
-//http://localhost:8080/propertysearch/scripts/services/paConfiguration.js
+// http://localhost:8080/propertysearch/scripts/services/paConfiguration.js
+// https://gisfs.miamidade.gov/mdarcgis/rest/services/MD_PA_PropertySearch/MapServer/16/query?f=json&where=&returnGeometry=false&geometry=<lon>,<lat>&inSR=4326&geometryType=esriGeometryPoint&outFields=*
 
 @Controller
 @RequestMapping ("")
