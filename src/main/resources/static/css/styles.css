@@ -18,7 +18,7 @@ html, body{
 }
 
 .loginTable {
-	width: 300px;
+	width: 250px;
 }
 
 .rightAlignCell {
@@ -26,7 +26,7 @@ html, body{
 }
 
 #logo {
-	max-width: 300px;
+	max-width: 250px;
 }
 
 a, a:visited{
