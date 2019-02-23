@@ -5,7 +5,6 @@ import org.springframework.boot.system.ApplicationHome;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
-import org.springframework.core.io.ClassPathResource;
 
 import java.util.HashMap;
 import java.util.Map;
