@@ -2,7 +2,7 @@ package ge.controllers;
 
 import ge.GE;
 import org.merkury.io.IOUtil;
-import org.merkury.util.NetUtil;
+import org.merkury.net.NetUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

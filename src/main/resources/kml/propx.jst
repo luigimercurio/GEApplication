@@ -10,7 +10,7 @@
           <title>@=attrs.address@</title>
         </head>
         <body>
-          @ if (attrs.folio.length < 13) { @
+          @ if (attrs.folio.length &lt; 13) { @
           <div id="backButtonDiv" onclick="this.style.display = 'none'; history.back ();" style="display: none;">
             <button type="button">Back</button>
           </div>
@@ -26,7 +26,7 @@
 
 function output (attrs) { @
   <Placemark>
-    @ if (attrs.folio.endsWith ("0001")) { @
+    @ if (attrs.folio.endsWith (&#x27;0001&#0039;)) { @
       <Style><IconStyle><color>ffff0000</color></IconStyle></Style>
       @ attrs.folio = attrs.folio.substring (0, 9);
     } @

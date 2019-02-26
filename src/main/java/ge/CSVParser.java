@@ -3,7 +3,7 @@ package ge;
 import ge.models.Property;
 import ge.models.data.PropertyDao;
 import org.merkury.io.IOUtil;
-import org.merkury.util.NetUtil;
+import org.merkury.net.NetUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.annotation.PostConstruct;

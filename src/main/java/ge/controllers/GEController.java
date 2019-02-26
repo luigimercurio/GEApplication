@@ -5,7 +5,7 @@ import ge.models.Property;
 import ge.models.data.PropertyDao;
 import org.merkury.json.JSONArray;
 import org.merkury.json.JSONObject;
-import org.merkury.util.NetUtil;
+import org.merkury.net.NetUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Controller;
