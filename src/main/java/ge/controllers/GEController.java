@@ -25,7 +25,7 @@ public class GEController {
 			"https://www.miamidade.gov/PApublicServiceProxy/PaServicesProxy.ashx?"
 					+ "Operation=GetPropertySearchByFolio&clientAppName=PropertySearch&folioNumber=";
 	protected static final String listURL     =
-			"http://www.miamidade.gov/PApublicServiceProxy/PaServicesProxy.ashx?"
+			"https://www.miamidade.gov/PApublicServiceProxy/PaServicesProxy.ashx?"
 					+ "Operation=GetPropertySearchByPartialFolio&clientAppName=PropertySearch&partialFolioNumber=";
 
 	protected static class Coordinates {
@@ -76,6 +76,11 @@ public class GEController {
 		return "index.html";
 	}
 
+	@GetMapping ("property")
+	public String property () {
+		return "index.html";
+	}
+
 	@GetMapping ("property/{folio}")
 	public String property (Model model, @PathVariable String folio) {
 		JSONObject res;
@@ -99,7 +104,7 @@ public class GEController {
 						list.addArray (res.array ("MinimumPropertyInfos"));
 						current += 200;
 						count = res.intValue ("Total");
-						GE.logger.info (current + " / " + count);
+						//GE.logger.info (current + " / " + count);
 					} while (current < count);
 					model.addAttribute ("list", list);
 					return "html/list";
@@ -121,7 +126,7 @@ public class GEController {
 		catch (Throwable t) {
 			throw new Error (t);
 		}
-		throw new IllegalArgumentException ("Invalid Folio length");
+		return "forward:/index.html";
 	}
 
 	@GetMapping ("prop.kml")

@@ -10,8 +10,13 @@
           <title>@=attrs.address@</title>
         </head>
         <body>
+          @ if (attrs.folio.length < 13) { @
+          <div id="backButtonDiv" onclick="this.style.display = 'none'; history.back ();" style="display: none;">
+            <button type="button">Back</button>
+          </div>
+          @ } @
           <div style="width: 300px; height: 500px; padding: 0px; margin: auto;">
-            <iframe style="width: 100%; height: 100%; border: none; padding: 0px; margin: 0px;" src="/propertysearch/#/?folio=@=attrs.folio@"></iframe>
+            <iframe style="width: 100%; height: 100%; border: none; padding: 0px; margin: 0px;" src="/property/@=attrs.folio@"></iframe>
           </div>
         </body>
       </html>

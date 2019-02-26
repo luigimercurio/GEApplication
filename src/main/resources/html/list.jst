@@ -4,6 +4,13 @@
 
 	<!-- Custom styles for this template -->
 	<link rel="stylesheet" href="/css/styles.css">
+	<script>
+		function showBackButton () {
+			if (window.parent && window.parent !== window) {
+				window.parent.document.getElementById ("backButtonDiv").style.display = "block";
+			}
+		}
+	</script>
 </head>
 
 <body ng-app="propertySearchApp" class="ng-scope">

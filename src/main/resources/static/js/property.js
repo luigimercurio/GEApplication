@@ -25,6 +25,18 @@ function showMap (geometry) {
 	var aerialLayer = new esri.layers.ArcGISTiledMapServiceLayer (urlAerialMap, { id: "aerial" });
 	var parcels = new esri.layers.FeatureLayer (urlParcelLayer, { id: "PAParcelLayer" });
 
+	var parcelSymbol = {
+        "color": [0,0,0,0],
+        "outline": {
+            "color": [255,255,0,255],
+            "width": 2,
+            "type": "esriSLS",
+            "style": "esriSLSSolid"
+        },
+        "type": "esriSFS",
+        "style": "esriSFSSolid"
+    };
+
 	map.geometry = geometry;
 	map.addLayer (aerialLayer);
 	map.addLayer (parcels);
@@ -36,16 +48,8 @@ function showMap (geometry) {
 	});
 	map.on ("load", function () {
 		map.graphics.add (new esri.Graphic ({
-			"geometry": geometry,
-			"symbol": {
-				"outline": {
-					"color": [255,255,0,255],
-					"width": 2,
-					"type": "esriSLS",
-					"style": "esriSLSSolid"
-				},
-				"type": "esriSFS"
-			}
+			geometry: geometry,
+			symbol: parcelSymbol
 		}));
 	});
 }
