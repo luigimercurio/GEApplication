@@ -2,6 +2,16 @@ html, body{
 	background-color:#e8e8ea;
 	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 	font-size: 14px;
+	padding: 0;
+	margin: 0;
+}
+
+.stickyDiv	{
+	position: -webkit-sticky; /* Safari */
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
 }
 
 .tabular_data td {

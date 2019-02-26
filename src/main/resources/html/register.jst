@@ -2,44 +2,46 @@
 @# html/common.jst @
 @ head (); @
 <body class="loginBody">
-	@ logo (); @
     <br/><br/>
-    <form class="inlineForm" action="/register" method="post">
-        @ if (userExists) { @
-            <p class="error">Username exists. Please choose another Username</p>
-            <br/>
-        @ } @
-        <table class="loginTable">
-            <tr>
-                <td class="rightAlignCell"><label> Username: </label></td>
-                <td><input type="text" name="username" value="@=user.username@"/></td>
-            </tr>
-            @ if ($errors ["user.username"]) { @
-            <tr>
-                <td colspan="2"><span class="error">@=$errors ["user.username"]@</span></td>
-            </tr>
-            @ } @
-            <tr>
-                <td class="rightAlignCell"><label> Password: </label></td>
-                <td><input type="password" name="password"/></td>
-            </tr>
-            @ if ($errors ["user.password"]) { @
-            <tr>
-                <td colspan="2"><span class="error">@=$errors ["user.password"]@</span></td>
-            </tr>
-            @ } @
-            <tr>
-                <td class="rightAlignCell"><label> Retype: </label></td>
-                <td><input type="password" name="verify"/></td>
-            </tr>
-            @ if (unmatched) { @
-            <tr>
-                <td colspan="2"><span class="error">Passwords do not match</span></td>
-            </tr>
-            @ } @
-        </table>
-        <p><button type="submit"><b>Register</b></button></p>
-        <input type="hidden" name="@=_csrf.parameterName@" value="@=_csrf.token@"/>
-    </form>
+	@ logo (); @
+	<div class="stickyDiv">
+	    <form class="inlineForm" action="/register" method="post">
+	        @ if (userExists) { @
+	            <p class="error">Username exists. Please choose another Username</p>
+	            <br/>
+	        @ } @
+	        <table class="loginTable">
+	            <tr>
+	                <td class="rightAlignCell"><label> Username: </label></td>
+	                <td><input type="text" name="username" value="@=user.username@"/></td>
+	            </tr>
+	            @ if ($errors ["user.username"]) { @
+	            <tr>
+	                <td colspan="2"><span class="error">@=$errors ["user.username"]@</span></td>
+	            </tr>
+	            @ } @
+	            <tr>
+	                <td class="rightAlignCell"><label> Password: </label></td>
+	                <td><input type="password" name="password"/></td>
+	            </tr>
+	            @ if ($errors ["user.password"]) { @
+	            <tr>
+	                <td colspan="2"><span class="error">@=$errors ["user.password"]@</span></td>
+	            </tr>
+	            @ } @
+	            <tr>
+	                <td class="rightAlignCell"><label> Retype: </label></td>
+	                <td><input type="password" name="verify"/></td>
+	            </tr>
+	            @ if (unmatched) { @
+	            <tr>
+	                <td colspan="2"><span class="error">Passwords do not match</span></td>
+	            </tr>
+	            @ } @
+	        </table>
+	        <p><button type="submit"><b>Register</b></button></p>
+	        <input type="hidden" name="@=_csrf.parameterName@" value="@=_csrf.token@"/>
+	    </form>
+	</div>
 </body>
 @ tail (); @

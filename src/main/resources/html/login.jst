@@ -11,20 +11,22 @@
 	@ } else { @
 	<p><b>Please sign in</b></p>
     @ } @
-	<form class="inlineForm" action="/login" method="post">
-        <table class="loginTable">
-            <tr>
-                <td class="rightAlignCell"><label> Username: </label></td>
-                <td><input type="text" name="username"/></td>
-            </tr>
-            <tr>
-                <td class="rightAlignCell"><label> Password: </label></td>
-                <td><input type="password" name="password"/></td>
-            </tr>
-        </table>
-        <input type="hidden" name=@=_csrf.parameterName@ value="@=_csrf.token@"/>
-        <p><button type="submit"><b>Sign in</b></button></p>
-    </form>
-    <p>Not registered? Register <a href="/register">here</a></p>
+	<div class="stickyDiv">
+		<form class="inlineForm" action="/login" method="post">
+	        <table class="loginTable">
+	            <tr>
+	                <td class="rightAlignCell"><label> Username: </label></td>
+	                <td><input type="text" name="username"/></td>
+	            </tr>
+	            <tr>
+	                <td class="rightAlignCell"><label> Password: </label></td>
+	                <td><input type="password" name="password"/></td>
+	            </tr>
+	        </table>
+	        <input type="hidden" name=@=_csrf.parameterName@ value="@=_csrf.token@"/>
+	        <p><button type="submit"><b>Sign in</b></button></p>
+	    </form>
+	    <p>Not registered? Register <a href="/register">here</a></p>
+	</div>
 </body>
 @ tail (); @
