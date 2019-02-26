@@ -1,0 +1,29 @@
+@: list @
+
+@
+function folio (s) {
+	return s.replace (/-/g, "");
+}
+
+	for (var i = 0; i < list.length; i ++) {
+		var candidate = list [i]; @
+	<div class="results_record">
+		
+        <span class="record_number">@=i + 1@</span>
+		
+        
+        <div class="record_folio"><strong>FOLIO:</strong>           
+            <a href="/property/@=folio(candidate.Strap)@">@=candidate.Strap@</a>
+		</div>
+		<div class="record_desc"><strong>Sub-Division:</strong> @=candidate.SubdivisionDescription@</div>
+		<div class="record_owner"><strong>OWNER:</strong> @=candidate.Owner1@</div>
+		@ if (candidate.Owner2) { @
+		<div class="record_owner><strong>&nbsp;</strong>@=candidate.Owner2@</div>
+		@ } @
+		<div class="record_address"><strong>PROP.&nbsp;ADDR:</strong>
+			@=candidate.SiteAddress@ @= candidate.SiteUnit ? " Unit " + candidate.SiteUnit : "" @
+		</div>
+		<div class="record_address">@=candidate.Municipality@</div>
+
+	</div>
+	@ } @

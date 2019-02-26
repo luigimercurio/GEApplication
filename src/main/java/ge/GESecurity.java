@@ -56,8 +56,8 @@ public class GESecurity extends WebSecurityConfigurerAdapter {
 	protected void configure (HttpSecurity http)
 	throws Exception {
 		http.authorizeRequests ()
-		    .antMatchers ("/propertysearch/**", "/PApublicServiceProxy/**")
-		    .authenticated ()
+		    //.antMatchers ("/propertysearch/**", "/PApublicServiceProxy/**")
+		    //.authenticated ()
 		    .anyRequest ()
 		    .permitAll ()
 		    .and ()

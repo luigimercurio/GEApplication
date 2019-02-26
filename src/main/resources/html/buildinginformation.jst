@@ -1,0 +1,55 @@
+@ var bldgs = Building.BuildingInfos [year]; @
+
+<div class="table-responsive table-oversized">
+	<table class="table table-condensed table-striped">
+		<tr>
+			<th class="tableHeader" colspan="7">Building Information </th>
+		</tr>
+        
+        @ if (!bldgs) { @
+			<tr>
+				<td colspan="7">No information</td>
+			</tr>
+		@ } else { @
+			<tr class="header-row">
+				<td class="text-center">Building Number</td>
+				<td class="text-center">Sub Area</td>            
+				<td class="text-center">Year Built</td>             
+				<td class="text-right">Actual Sq.Ft.</td>
+				<td class="text-right">Living Sq.Ft.</td>
+				<td class="text-right fixed-width">Adj Sq.Ft.</td>
+				<td class="text-right fixed-width">Calc Value</td>
+			</tr>
+
+			@ var bldgNos = Object.keys (bldgs);
+			bldgNos.sort (compareInts);
+			for (var i = 0; i < bldgNos.length; i ++) {
+				var bldgSegs = Object.keys (bldgs [bldgNos [i]]);
+				bldgSegs.sort (compareInts);
+				for (var j = 0; j < bldgSegs.length; j ++) {
+					var bldg = bldgs [bldgNos [i]] [bldgSegs [j]]; @
+					<tr>
+					  <td class="text-center">@=bldg.BuildingNo@</td>
+					  <td class="text-center">@=bldg.SegNo@</td>            
+					  <td class="text-center">@=bldg.Actual@</td>            
+					  <td class="text-right">@=number (bldg.GrossArea )@</td>
+					  <td class="text-right">@=number (bldg.HeatedArea)@</td>
+					  <td class="text-right fixed-width">@=number (bldg.EffectiveArea)@</td>
+					  <td class="text-right fixed-width">@=dollars (bldg.DepreciatedValue)@</td>
+					</tr>
+				@ }
+			}
+		} @
+		
+		<!-- sketch placeholder - make sure to show / hide entire TR -->
+		<!--tr ng-show="property.building[property.rollYear1].showSketch">
+			<td colspan="8">
+                <div class="sketch-message">
+                    <img src="images/sketches.png" width="16" height="16" alt="Building Sketches"> 
+					<a href="/PAPortal/PropertySearch/Sketch.aspx?Folio=@=property.propertyInfo.folioNumber@&year=@=property.rollYear1@" target="_blank">Building Sketches Available!</a>
+                </div>
+            </td>
+		</tr-->
+        
+	</table>
+</div>

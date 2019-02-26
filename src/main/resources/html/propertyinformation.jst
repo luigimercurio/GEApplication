@@ -1,0 +1,182 @@
+@
+var info = PropertyInfo;
+var owners = OwnerInfos;
+@
+
+<div class="property_info tabular_data">
+
+
+	<table class="table table-striped" id="property_info">
+		<tr>
+			<th class="tableHeader" colspan="2">
+				Property Information </th>
+		</tr>
+
+		<tr>
+			<td colspan="2"><strong style="display:inline">Folio:</strong>
+			@=info.FolioNumber@ <span style="font-weight:bold">@= info.Status === "AC Active" ? "" : "[" + infoStatus + "]" @</span></td>
+		</tr>
+        
+        <tr>
+			<td colspan="2"><strong>Sub-Division</strong>
+            
+            <div>@=info.SubdivisionDescription@</div></td>
+		</tr>
+
+		<tr>
+			<td colspan="2" class="pi_mailing_address"><strong>Property Address</strong>
+            
+                <div class="@= SiteAddress.length > 5 ? "address-overflow" : "" @">
+                
+                    @ for (var i = 0; i < SiteAddress.length; i ++) {
+						var address = SiteAddress [i];
+						if (i == 0) { @
+                        <div class="property-add">
+							@ if (address.Address) { @
+                            <span class="@= address.Address ? "inline" : "" @">@=address.StreetNumber@ </span>
+                            <span class="@= address.Address ? "inline" : "" @">@=address.StreetPrefix@ </span>
+                            <span class="@= address.Address ? "inline" : "" @">@=address.StreetName@ </span>
+                            <span class="@= address.Address ? "inline" : "" @">@=address.StreetSuffix@ </span>
+                            <span class="@= address.Address ? "inline" : "" @">@=address.StreetSuffixDirection@ </span>
+                            @ }
+                            if (address.unit) { @
+							<span class="inline">&nbsp;&nbsp;&nbsp;UNIT:&nbsp;&nbsp;@=address.Unit@ </span>
+							@ } @
+                            <span> </span>
+							@ if (address.Address) { @
+							<span class="@= address.Address ? "inline" : "" @">@=getRenamedMunicipality(address.City)@,</span>
+							<span class="@= address.Address ? "inline" : "" @">FL&nbsp;</span>
+							<span class="@= address.Address ? "inline" : "" @">@=address.Zip@</span>
+							@ } @
+							<span> </span>							
+                        </div>
+                        @ } else { @
+                        <span>
+                            <span class="inline">@=address.StreetNumber@ </span>
+                            <span class="inline">@=address.StreetPrefix@ </span>
+                            <span class="inline">@=address.StreetName@ </span>
+                            <span class="inline">@=address.StreetSuffix@ </span>
+                            <span class="inline">@=address.Unit@ </span>
+                        </span>
+                        @ }
+                    } @
+                    
+                </div>
+            </td>
+		</tr>
+		
+		<tr>
+			<td colspan="2"><strong>Municipality</strong><div>@=info.Municipality@</div></td>
+		</tr>
+
+		<tr>
+			<td colspan="2"><strong>Owner</strong>
+                <div class="@= owners.length > 4 ? "owner-overflow" : "" @">
+                    <div>
+						@ for (var owner of owners) { @
+                        <div>@=owner.Name@</div>
+                        @ } @
+                    </div>
+                </div>
+			</td>
+		</tr>
+
+		<tr>
+			<td colspan="2" class="pi_mailing_address"><strong>Mailing Address</strong>
+				<div>
+                    <span>@=MailingAddress.Address1@ </span>
+                    @  if (MailingAddress.Address2) { @
+                    <span>@=MailingAddress.Address2@</span>
+                    @ }
+                    if (MailingAddress.Address3) { @
+                    <span>@=$model.MailingAddress.Address3@</span>
+                    @ }
+                    if (MailingAddress.City) { @
+					<span class="inline">@=MailingAddress.City@,</span>
+					@ } @
+                    <span class="inline">@=MailingAddress.State@</span>
+                    <span class="inline">@=MailingAddress.ZipCode@</span>
+                    @ if (!isCountryUSA (MailingAddress.Country)) { @
+                    <span>@=MailingAddress.Country@</span>
+                    @ } @
+                </div>
+            </td>
+		</tr>
+
+		<tr>
+			<td colspan="2"><strong>PA Primary Zone</strong><div>@=info.PrimaryZone@ 
+                          @=info.PrimaryZoneDescription@</div></td>
+		</tr>
+
+		<tr>
+			<td colspan="2"><strong>Primary Land Use</strong><div>@=info.DORCode@
+			@=info.DORDescription@</div></td>
+		</tr>
+
+		<tr>
+			<td class="prop_info_width"><strong>Beds / Baths / Half</strong></td>
+
+			<td>@=info.BedroomCount@
+			/ @=info.BathroomCount@
+			/ @=info.HalfBathroomCount@</td>
+		</tr>
+
+		<tr>
+			<td><strong>Floors</strong></td>
+
+			<td>@=info.FloorCount@</td>
+		</tr>
+
+		<tr>
+			<td><strong>Living Units</strong></td>
+
+			<td>@=info.UnitCount@</td>
+		</tr>
+
+		<tr>
+			<td><strong>Actual Area</strong></td>
+
+			<td>
+			@=sqft (info.BuildingActualArea)@
+			</td>
+		</tr>
+
+		<tr>
+			<td><strong>Gross Area</strong></td>
+
+			<td>
+			@=sqft (info.BuildingGrossArea)@
+			</td>
+		</tr>
+
+		<tr>
+			<td><strong>Living Area</strong></td>
+
+			<td>
+			@=sqft (info.BuildingHeatedArea)@
+			</td>
+		</tr>
+
+		<tr>
+			<td><strong>Adjusted Area</strong></td>
+
+			<td>
+			@=sqft (info.BuildingEffectiveArea)@
+			</td>
+		</tr>
+
+		<tr>
+			<td><strong>Lot Size</strong></td>
+
+			<td>@=sqft (info.LotSize)@
+			</td>
+		</tr>
+
+		<tr>
+			<td><strong>Year Built</strong></td>
+
+			<td>@=info.YearBuilt@</td>
+		</tr>
+	</table>
+
+</div>

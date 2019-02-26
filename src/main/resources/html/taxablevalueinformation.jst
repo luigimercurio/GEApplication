@@ -1,0 +1,76 @@
+@ var tax = Taxable.TaxableInfos [year]; @
+
+<div class="table-responsive">
+	<table class="table table-condensed">
+		<tr>
+			<th class="tableHeader" colspan="2">Taxable Value Information </th>
+		</tr>
+        
+        <!--tr class="header-row taxable">
+			<td>Year</td>
+
+			<td class="text-right">@=year@</td>
+		</tr-->
+
+		@ if (tax) { @
+        <tr>
+			<td colspan="2" class="table-section">County</td>
+        </tr>
+        <tr class="border-bottom">
+			<td class="table-section-head">Exemption Value</td>
+
+			<td class="text-right">@=dollars (tax.CountyExemptionValue)@</td> 
+		</tr>
+        <tr>
+			<td class="table-section-head">Taxable Value</td>
+
+			<td class="text-right">@=dollars (tax.CountyTaxableValue)@</td>
+		</tr>
+
+		<tr>
+			<td colspan="2" class="table-section">School Board</td>
+        </tr>
+        <tr class="border-bottom">
+			<td class="table-section-head">Exemption Value</td>
+
+			<td class="text-right">@=dollars (tax.SchoolExemptionValue)@</td>
+		</tr>
+        <tr>
+			<td class="table-section-head">Taxable Value</td>
+
+			<td class="text-right">@=dollars (tax.SchoolTaxableValue)@</td>
+		</tr>
+
+		<tr>
+			<td colspan="42" class="table-section">City</td>
+        </tr>
+        <tr class="border-bottom">
+			<td class="table-section-head">Exemption Value</td>
+
+			<td class="text-right">@=dollars (tax.CityExemptionValue)@</td>
+		</tr>
+                <tr>
+			<td class="table-section-head">Taxable Value</td>
+
+			<td class="text-right">@=dollars (tax.CityTaxableValue)@</td>
+		</tr>
+
+		<tr>
+			<td colspan="2" class="table-section">Regional</td>
+        </tr>
+        <tr class="border-bottom">
+			<td class="table-section-head">Exemption Value</td>
+
+			<td class="text-right">@=dollars (tax.RegionalExemptionValue)@</td>
+		</tr>
+        <tr>
+			<td class="table-section-head">Taxable Value</td>
+
+			<td class="text-right">@=dollars (tax.RegionalTaxableValue)@</td>
+		</tr>
+		@ } else { @
+		<tr><td colspan="2">No Information</td></tr>
+		@ } @
+
+	</table>
+</div>

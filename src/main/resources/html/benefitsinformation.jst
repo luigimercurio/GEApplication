@@ -1,0 +1,35 @@
+@ var bnf = Benefit.BenefitInfos [year]; @
+
+<div class="table-responsive">
+	<table class="table table-condensed table-striped">
+		<tr>
+			<th class="tableHeader" colspan="3">Benefits Information </th>
+		</tr>
+        
+        <!--tr class="header-row taxable">
+			<td colspan="2">Year</td>
+
+			<td class="text-right">@=year@</td>
+		</tr-->
+
+		@ if (!bnf) { @
+		<tr><td colspan="3">No information</td></tr>
+		@ } else { @
+        <tr class="header-row">
+			<td>Benefit</td>
+
+			<td>Type</td>
+            <td class="text-right">Value</td>
+		</tr>
+
+			@ var kinds = Object.keys (bnf); for (var i = 0; i < kinds.length; i ++) { @
+			<tr>
+				<td><strong>@=kinds [i]@</strong></td>
+							<td>@=bnf [kinds [i]].Type@</td>
+							<td class="text-right">@=dollars (bnf [kinds [i]].Value)@</td>
+					 </tr>
+			@ }
+		} @
+
+	</table>
+</div>

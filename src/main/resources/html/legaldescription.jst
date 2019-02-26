@@ -1,0 +1,20 @@
+@ var legal = (LegalDescription.Description || "N/A").split ("|"); @
+<div class="table-responsive">
+
+	<table class="table table-condensed table-striped">
+		<tr>
+			<th class="tableHeader">Full Legal Description </th>
+		</tr>
+              <tr>
+                  <td class="description-block">
+                    <div class="@= legal.length > 10 ? "legal-overflow" : "" @">
+					  @ for (var i = 0; i < legal.length; i ++) { @
+                      <span>@=legal [i]@<br/>
+                      </span>
+                      @ } @
+                    </div>
+                  </td>
+                </tr> 
+	</table>
+
+</div>

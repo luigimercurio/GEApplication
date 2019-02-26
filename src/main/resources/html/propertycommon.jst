@@ -1,0 +1,110 @@
+@"use strict"@
+
+@:
+Additionals,
+Assessment,
+Benefit,
+Building,
+ClassifiedAgInfo,
+Completed,
+District,
+ExtraFeature,
+GeoParcel,
+Land,
+LegalDescription,
+MailingAddress,
+Message,
+OwnerInfos,
+PropertyInfo,
+RollYear1,
+RollYear2,
+RollYear3,
+SalesInfos,
+SiteAddress,
+Taxable
+@
+
+@
+Assessment.AssessmentInfos = byFld (Assessment.AssessmentInfos, ["Year"]);
+Taxable.TaxableInfos = byFld (Taxable.TaxableInfos, ["Year"]);
+Benefit.BenefitInfos = byFld (Benefit.BenefitInfos, ["TaxYear", "Description"]);
+Land.Landlines = byFld (Land.Landlines, ["RollYear"]);
+Building.BuildingInfos = byFld (Building.BuildingInfos, ["RollYear", "BuildingNo", "SegNo"]);
+ExtraFeature.ExtraFeatureInfos = byFld (ExtraFeature.ExtraFeatureInfos, ["RollYear", "Description"]);
+
+jst.defval = "N/A";
+
+function compareInts (a, b) {
+	return parseInt (a) - parseInt (b);
+}
+
+function getRenamedMunicipality (municipality) {
+	return municipality.toUpperCase () === "UNINCORPORATED COUNTY" ? "Miami" : municipality;
+}
+
+function isCountryUSA (country) {
+	return country != undefined && (country.toUpperCase () === "USA" || country.toUpperCase () === "US");
+}
+
+function numberWithCommas (n) {
+    var parts = n.toString ().split (".");
+
+    parts [0] = parts [0].replace (/\B(?=(\d{3})+(?!\d))/g, ",");
+    return parts.join (".");
+}
+
+function number (n) {
+	return n < 0 ? "N/A" : numberWithCommas (n);
+}
+
+function sqft (n) {
+	return n < 0 ? "N/A" : numberWithCommas (n) + " Sq.Ft";
+}
+
+function dollars (n) {
+	return n < 0 ? "N/A" : "$" + numberWithCommas (n);
+}
+
+function byFld (lst, flds, index) {
+	var map = {};
+	var fld;
+	var v;
+	var keys;
+
+	index = index || 0;
+	if (!lst || !flds || flds.length <= index) {
+		return lst && lst.length >= 1 ? lst [0] : {};
+	}
+	fld = flds [index];
+	for (var i = 0; i < lst.length; i ++) {
+		v = lst [i] [fld];
+		if (!map [v]) {
+			map [v] = [];
+		}
+		map [v] [map [v].length] = lst [i];
+	}
+	keys = Object.keys (map);
+	for (var i = 0; i < keys.length; i ++) {
+		map [keys [i]] = byFld (map [keys [i]], flds, index + 1);
+	}
+	return map;
+}
+
+@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

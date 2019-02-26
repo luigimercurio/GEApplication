@@ -8,7 +8,12 @@ import javax.validation.constraints.Size;
 
 @Entity
 @Table (name = "Properties",
-		indexes = { @Index (columnList = "x"), @Index (columnList = "y"), @Index (columnList = "parentFolio") })
+		indexes = {
+				@Index (columnList = "folio"),
+				@Index (columnList = "x"),
+				@Index (columnList = "y"),
+				@Index (columnList = "parentFolio")
+		})
 public class Property {
 
 	@Id
@@ -66,7 +71,8 @@ public class Property {
 		this.address = address;
 	}
 
-	public Property () {}
+	public Property () {
+	}
 
 	public Property (int id, double x, double y, String folio, String parentFolio, String address) {
 		this.id = id;

@@ -1,0 +1,35 @@
+@ var land = Land.Landlines [year]; @
+
+<div class="table-responsive">
+	<table class="table table-condensed table-striped">
+		<tr>
+			<th class="tableHeader" colspan="6">Land Information </th>
+		</tr>
+        
+        @ if (!land) { @
+			<tr>
+				<td colspan="6">No information</td>
+			</tr>
+		@ } else { @
+        <tr class="header-row">
+        	<td>Land Use</td>
+			<td class="text-center">Muni Zone</td>
+			<td class="text-center">PA Zone</td>
+			<td class="text-center">Unit Type</td>
+			<td class="text-right fixed-width">Units</td>
+			<td class="text-right fixed-width">Calc Value</td>
+		</tr>
+
+		<tr>
+			<td>@=land.LandUse@</td>
+ 			<td class="text-center">@=land.MuniZone + (land.MuniZoneDescription ? " - " + land.MuniZoneDescription : "")@</td>
+			<td class="text-center">@=land.Zone + (land.PAZoneDescription ? " - " + land.PAZoneDescription : "")@</td>
+			<td class="text-center">@=land.UnitType@</td>
+			<td class="text-right fixed-width">@=number (land.Units)@</td>
+			<td class="text-right fixed-width">@=dollars (land.CalculatedValue)@</td>
+
+		</tr>
+		@ } @
+
+	</table>
+</div>

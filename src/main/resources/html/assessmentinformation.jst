@@ -1,0 +1,48 @@
+@ var asm = Assessment.AssessmentInfos [year]; @
+
+<div class="table-responsive">
+	<table class="table table-condensed table-striped">
+		<tr>
+			<th class="tableHeader" colspan="2">Assessment Information </th>
+		</tr>
+
+        <!--tr class="header-row">
+			<td>Year</td>
+			<td class="text-right">@=year@</td>
+		</tr-->
+
+		@ if (asm) { @
+		<tr>
+			<td><strong>Land Value</strong></td>
+			<td class="text-right">@=dollars (asm.LandValue)@</td>
+		</tr>
+
+		<tr>
+			<td><strong>Building Value</strong></td>
+			<td class="text-right">@=dollars (asm.BuildingOnlyValue)@</td>
+		</tr>
+
+		<tr>
+			<td><strong>Extra Feature Value</strong></td>
+			<td class="text-right">
+				<span class="text-right">@=dollars (asm.ExtraFeatureValue)@</span>
+            </td>
+		</tr>
+
+		<tr>
+			<td><strong>Market Value</strong></td>
+			<td class="text-right">@=dollars (asm.TotalValue)@</td>
+		</tr>
+
+		<tr class="row-divider">
+			<td><strong>Assessed Value</strong></td>
+			<td class="text-right">@=dollars (asm.AssessedValue)@</td>
+		</tr>
+		@ } else { @
+		<tr><td colspan="2">No Information</td></tr>
+		@ } @
+
+        
+	</table>
+</div>
+

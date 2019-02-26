@@ -1,0 +1,19 @@
+@ var keys = Object.keys ($model); @
+<div class="add-info-container">
+	<table class="table table-condensed table-striped">
+		<tr>
+			<th class="tableHeader" colspan="2">Additional Information</th>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+		</tr>
+		<tr>
+		@ keys.sort (); for (var i = 0; i < keys.length; i ++) { @
+		<tr>
+			<td><strong>@=keys [i]@</strong></td>
+			<td>@=$model [keys [i]]@</td>
+		</tr>
+		@ } @
+	</table>
+</div>
+

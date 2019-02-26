@@ -1,0 +1,34 @@
+@ var extras = ExtraFeature.ExtraFeatureInfos [year]; @
+
+<div class="table-responsive">
+	<table class="table table-condensed table-striped">
+		<tr>
+			<th class="tableHeader" colspan="4">Extra Features </th>
+		</tr>
+		
+		@ if (!extras) { @
+			<tr>
+				<td colspan="4">No information</td>
+			</tr>
+		@} else { @
+			<tr class="header-row">
+				<td>Description</td>
+				<td class="text-center">Year Built</td>
+				<td class="text-right fixed-width">Units</td>
+				<td class="text-right fixed-width">Calc Value</td>
+			</tr>
+
+			@ var descs = Object.keys (extras);
+			descs.sort ();
+			for (var i = 0; i < descs.length; i ++) {
+				var extra = extras [descs [i]]; @
+				<tr>
+				  <td>@=extra.Description@</td>
+				  <td class="text-center">@=extra.ActualYearBuilt@</td>            
+				  <td class="text-right fixed-width">@=number (extra.Units)@</td>            
+				  <td class="text-right fixed-width">@=dollars (extra.DepreciatedValue)@</td>
+				</tr>
+			@ } @
+		@ } @
+	</table>
+</div>

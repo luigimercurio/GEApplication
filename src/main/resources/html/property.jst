@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Bootstrap core CSS -->
+	<!--link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"-->
+	<!--link rel="stylesheet" href="http://www.miami-re.com/propertysearch/bower_components/bootstrap-sass/dist/css/bootstrap.min.css"-->
+
+	<!-- Custom styles for this template -->
+	<link rel="stylesheet" type="text/css" href="/css/styles.css">
+
+	<!-- dojo esri -->
+	<link rel="stylesheet" type="text/css" href="https://js.arcgis.com/3.23/esri/css/esri.css"> 
+
+	<script src="https://js.arcgis.com/3.23"></script>
+	<script src="/jst/jst.js"></script>
+	<script src="/js/set.js"></script>
+	<script src="/js/map.js"></script>
+	<script>var activeYear = @|$model.RollYear1@;</script>
+	<script src="/js/property.js"></script>
+</head>
+
+<body ng-app="propertySearchApp" class="ng-scope">
+
+	@# html/propertycommon.jst @
+	@# html/propertyinformation.jst @
+	<div id="map"></div>
+	<div class="tabular_data">
+		@# html/legaldescription.jst @
+		@# html/salesinformation.jst @
+	</div>
+	<div class="row tabular_data">
+		<div class="col-md-12">
+			<div class="nav nav-tabs">
+				@ for (var year = RollYear1; year >= RollYear1 - 2; year --) { @
+				<span id="tab@=year@" class="@= year === RollYear1 ? "active" : "" @">
+					<a onclick="setActiveRollYearTab (@=year@);" tabindex="@=RollYear1 - year@" class="binding">@=year@</a>
+				</span>
+				@ } @
+			</div>
+			<div class="tab-content" style="padding-top: 15px">
+				@ for (var year = RollYear1; year >= RollYear1 - 2; year --) { @
+				<div id="tab@=year@Content" class="tab-pane @= year === RollYear1 ? "active" : "" @">
+					@# html/assessmentinformation.jst @
+					@# html/taxablevalueinformation.jst @
+					@# html/benefitsinformation.jst @
+					@# html/landinformation.jst @
+					@# html/buildinginformation.jst @
+					@# html/extrafeatures.jst @
+				</div>
+				@ } @
+			</div>
+		</div>
+	</div>
+	<div id="additionalInfoDiv" class="tabular_data">
+	</div>
+	<script>
+		"use strict"
+
+		dojo.ready (function () {
+			loadInfoAndShowMap (@=$model.lon@, @=$model.lat@);
+		});
+	</script>
+</body>
+</html>

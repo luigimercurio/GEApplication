@@ -1,0 +1,37 @@
+@ var sales = SalesInfos; @
+
+<div class="table-responsive">
+	<table class="table table-condensed table-striped">
+		<tr>
+			<th class="tableHeader" colspan="6">Sales Information
+			</th>
+		</tr>
+		@ if (!sales || sales.length == 0) { @
+		<tr>
+			<td colspan="6">No Information</td>
+		</tr>
+		@ } else { @
+			<tr class="header-row">
+				<td>Previous Sale</td>
+				<td class="text-right" style="padding-right:30px">Price</td>
+				<td class="text-center">OR Book-Page</td>
+				<td class="text-center">Qualification Description</td>
+				<td>Previous Owner 1</td>
+				<td>Previous Owner 2</td>
+			</tr>
+			@ for (var i = 0; i < sales.length; i ++) {
+			var sale = sales [i]; @
+			<tr>
+				<td>@=sale.DateOfSale@</td>
+				<td class="text-right" style="padding-right:30px">@=dollars(sale.SalePrice)@</td>
+
+				<td class="text-center">@=sale.OfficialRecordBook@-@=sale.OfficialRecordPage@</td>
+
+	            <td>@=sale.QualificationDescription@</td>
+				<td>@=sale.GrantorName1@</td>
+				<td>@=sale.GrantorName2@</td>
+			</tr>
+			@ } @
+		@ } @
+	</table>
+</div>

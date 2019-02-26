@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<!-- Custom styles for this template -->
+	<link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body ng-app="propertySearchApp" class="ng-scope">
+	<div class="container ng-scope" ng-view="">
+		<div class="content ng-scope" id="contentScrollPoint">
+			<!-- /.container -->
+			<div class="content main_content_body">
+				<div class="row" ng-show="candidatesList">
+					<div class="col-md-12 col-sm-12">
+						<div class="property_info tabular_data">
+							<div id="results_list">
+								<div ng-include="'views/candidates.html'" class="ng-scope">	
+									@# html/candidates.jst @
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /.container -->
+		</div>
+	</div>
+</body>
+</html>
