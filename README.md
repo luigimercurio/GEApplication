@@ -1,20 +1,16 @@
 # GEApplication
 
 ## Overview
-Google Earth plugin for Commercial Real Estate professionals. Will present information about any property in
-Miami-Dade County using a map-based interface
+Google Earth plugin for Commercial Real Estate professionals. Will present information about any property in Miami-Dade County using a map-based interface
 
 ### Features
 **Property mapping:** All properties are mapped according to their GeoLocation information (i.e. Latitude / Longitude)
 
-**Color coding:** Properties are represented by colored pins, allowing the user to distinguish between condos /
-cooperatives and single-owner properties
+**Color coding:** Properties are represented by colored pins, allowing the user to distinguish between condos / cooperatives and single-owner properties
 
-**Active information access:** Information is accesible py *"pushing"* a pin identifying the property and opens an
-*"information bubble"* within the Goggle Earth screen
+**Active information access:** Information is accesible py *"pushing"* a pin identifying the property and opens an *"information bubble"* within the Google Earth screen
 
-**Layered information access for condos/cooperatives:** When a condo/coop pin is pushed, a list of all individual
-parcels present in the condo/coop is presented, allowing easy access to each one of them
+**Layered information access for condos/cooperatives:** When a condo/coop pin is pushed, a list of all individual parcels present in the condo/coop is presented, allowing easy access to each one of them
 
 **Multiple information sections:** Several clearly separated sections are present on the information bubbles:
 - General property information (address, folio number, ownership, land use, square footage, floors, units, etc.)
