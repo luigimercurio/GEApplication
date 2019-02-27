@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<!-- Bootstrap core CSS -->
-	<!--link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"-->
-	<!--link rel="stylesheet" href="http://www.miami-re.com/propertysearch/bower_components/bootstrap-sass/dist/css/bootstrap.min.css"-->
-
-	<!-- Custom styles for this template -->
+	@// Custom styles for this template @
 	<link rel="stylesheet" type="text/css" href="/css/styles.css">
 
-	<!-- dojo esri -->
+	@// esri css @
 	<link rel="stylesheet" type="text/css" href="https://js.arcgis.com/3.23/esri/css/esri.css"> 
 
+	@// esri js @
 	<script src="https://js.arcgis.com/3.23"></script>
+
+	@// jst only used to dynamically load additional information template @
 	<script src="/jst/jst.js"></script>
+
+	@// replacements for standard Set and Map, as GE pro does not support them @
 	<script src="/js/set.js"></script>
 	<script src="/js/map.js"></script>
+
+	@// current year from model @
 	<script>var activeYear = @|$model.RollYear1@;</script>
+
+	@// custom script for this template @
 	<script src="/js/property.js"></script>
 </head>
 
@@ -24,7 +29,9 @@
 	@# html/propertycommon.jst @
 	@# html/propertyinformation.jst @
 	<div style="position:relative;" >
+		@// needed to allow finger scrolling on touch screen (map will be oblivious to any event) @
 		<img style="position: absolute; z-index: 1; width: 100%; height: 100%;" src="/transparent.png"/>
+		@// esri map placeholder @
 		<div id="map"></div>
 	</div>
 	<div class="tabular_data">

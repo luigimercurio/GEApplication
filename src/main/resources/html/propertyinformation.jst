@@ -14,7 +14,7 @@ var owners = OwnerInfos;
 
 		<tr>
 			<td colspan="2"><strong style="display:inline">Folio:</strong>
-			@=info.FolioNumber@ <span style="font-weight:bold">@= info.Status === "AC Active" ? "" : "[" + infoStatus + "]" @</span></td>
+			@=info.FolioNumber@ <span style="font-weight:bold">@= info.Status === "AC Active" ? "" : "[" + info.Status + "]" @</span></td>
 		</tr>
         
         <tr>
