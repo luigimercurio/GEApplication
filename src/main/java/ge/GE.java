@@ -13,8 +13,8 @@ public class GE {
 	public static final Log logger = LogFactory.getLog (GE.class);
 
 	@Bean
-	public CSVParser getParser () {
-		logger.info ("getParser");
+	public CSVParser csvParser () {
+		logger.info ("csvParser");
 		return new CSVParser ();
 	}
 
