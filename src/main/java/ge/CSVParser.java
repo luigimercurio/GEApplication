@@ -115,8 +115,7 @@ public class CSVParser {
 	protected void reloadData () {
 		try {
 			GE.logger.info ("(Re)loading data set: " + properties.getLink ());
-			NetUtil.getCharFile (properties.getLink (), null, (String) null, properties.getFile (),
-			                     Charset.forName ("UTF-8"));
+			NetUtil.getCharFile (properties.getLink (), null, (String) null, properties.getFile (), "UTF-8");
 			GE.logger.info ("Data set successfully (re)loaded");
 		}
 		catch (Throwable t) {

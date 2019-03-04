@@ -96,11 +96,8 @@ public class GEController {
 					current = 0;
 					do {
 						res = JSONObject.from (NetUtil.getCharFile (
-								listURL + folio + "&from=" + (current + 1) + "&to=" + (current + 200), null,
-								new String[][] {
-										{ "Referer", "https://www.miamidade.gov/propertysearch/" },
-										{ "Connection", "close" }
-								}));
+								listURL + folio + "&from=" + (current + 1) + "&to=" + (current + 200), null, "UTF-8"
+						));
 						list.addArray (res.array ("MinimumPropertyInfos"));
 						current += 200;
 						count = res.intValue ("Total");

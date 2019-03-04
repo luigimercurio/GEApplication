@@ -35,9 +35,7 @@ public class GERelayer {
 		GE.logger.info (req);
 		try {
 			os = response.getOutputStream ();
-			NetUtil.relay ("https://www.miamidade.gov" + req, null, new String[][] {
-					{ "Referer", "https://www.miamidade.gov/propertysearch/" }, { "Connection", "close" }
-			}, os);
+			NetUtil.relay ("https://www.miamidade.gov" + req, null, (String) null, os);
 			os.close ();
 		}
 		catch (Throwable t) {
@@ -74,9 +72,7 @@ public class GERelayer {
 			if (!file.exists ()) {
 				filePath = file.getCanonicalPath ();
 				GE.logger.info ("Cache " + req + " -> " + filePath);
-				NetUtil.getBinaryFile ("https://www.miamidade.gov" + req, null, new String[][] {
-						{ "Referer", "https://www.miamidade.gov/propertysearch/" }, { "Connection", "close" }
-				}, filePath);
+				NetUtil.getBinaryFile ("https://www.miamidade.gov" + req, null, (String) null, filePath);
 				if ("/miamidadegis/index.html".equals (res)) {
 					IOUtil.writeToFile (filePath,
 					                    IOUtil.readFromFile (filePath).replaceFirst ("<head>", scriptInjection));
