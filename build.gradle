@@ -39,7 +39,7 @@ dependencies {
 	implementation('org.graalvm.js:js:1.0.0-rc10')
 	implementation('javax.interceptor:javax.interceptor-api:1.2')
 	implementation files('../../../java/merkury/jst/build/libs/merkury-jst-0.0.1-SNAPSHOT.jar')
-	implementation files('../../../java/merkury/merkury/out/artifacts/merkury.jar')
+	implementation files('../../../java/merkury/merkury/build/libs/merkury.jar')
 }
 
 bootRun {
