@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.graalvm.js:js:1.0.0-rc12">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.graalvm.js/js/1.0.0-rc12/f1aaee616cb62866c0c22ca26c8fdd93a7d3e0f8/js-1.0.0-rc12.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.graalvm.js/js/1.0.0-rc12/24794d7214dc6e9653af29657d14edec357c6e99/js-1.0.0-rc12-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
