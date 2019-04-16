@@ -29,12 +29,12 @@ repositories {
 }
 
 dependencies {
+	//implementation('org.springframework.boot:spring-boot-starter-security')
 	implementation('org.springframework.boot:spring-boot-starter-web')
 	//providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
 	//providedRuntime('org.apache.tomcat:tomcat-jdbc')
 	//providedRuntime('org.apache.tomcat:tomcat-juli')
 	implementation('org.springframework.boot:spring-boot-starter-data-jpa')
-	implementation('org.springframework.boot:spring-boot-starter-security')
 	implementation('mysql:mysql-connector-java')
 	implementation('org.graalvm.js:js:1.0.0-rc12')
 	//implementation('javax.interceptor:javax.interceptor-api:1.2')

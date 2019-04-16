@@ -1,5 +1,6 @@
 package ge.controllers;
 
+/*
 import ge.GESecurity;
 import ge.models.RegisteredUser;
 import ge.models.data.RegisteredUserDao;
@@ -83,3 +84,4 @@ public class GESecurityController {
 		return "html/login";
 	}
 }
+*/
